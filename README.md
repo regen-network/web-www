@@ -14,6 +14,7 @@ The website for the [Regen Network](https://regen.network).
   - [Development](#development)
   - [Deployment](#deployment)
     - [Website](#website)
+      - [GraphQL Type generation](#graphql-type-generation)
   - [web-components](#web-components)
   - [Code style](#code-style)
   - [Typography](#typography)
@@ -65,6 +66,25 @@ yarn develop
 ```sh
 yarn build
 ```
+
+#### GraphQL Type generation
+
+To generate Type definitions from our GraphQL Schema, as well as custom react hooks, make sure the [graphQL server is running locally](https://github.com/regen-network/registry-server/blob/5adc07f89c0d4ee74d65779cfad591025c8bebc2/README.md#starting-a-development-server):
+
+1.  `yarn graphql:codegen`
+
+```sh
+yarn graphql:codegen
+```
+
+This should be done anytime a `.graphql` file is created or modified.
+
+As part of https://github.com/regen-network/registry-server/pull/186, we've added some additional filtering features to our GraphQL server (using [postgraphile-plugin-connection-filter](https://github.com/graphile-contrib/postgraphile-plugin-connection-filter)), though we restricted the filters to only work on certain fields and operators for now for [performance and security](https://github.com/graphile-contrib/postgraphile-plugin-connection-filter#performance-and-security) reasons:
+https://github.com/regen-network/registry-server/blob/aa97096c9a8e88e1af97655586e0222e263b8df5/server/Server.ts#L111-L115
+
+If you try to use a filter that is not allowed yet, you'll get the following error when trying to generate types:
+`GraphQLDocumentError: Field "${fieldName}" is not defined by type "${TableName}Filter".`
+In this case, you might want to submit a PR on https://github.com/regen-network/registry-server first to allow more filtering options.
 
 ## web-components
 
