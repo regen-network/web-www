@@ -12,6 +12,10 @@ jobs:
   build:
     runs-on: ubuntu-latest
     environment: production
+    env:
+      GATSBY_SANITY_TOKEN: ${{ secrets.GATSBY_SANITY_TOKEN }}
+      GATSBY_SANITY_PROJECT_ID: ${{ secrets.GATSBY_SANITY_PROJECT_ID }}
+      GATSBY_SANITY_DATASET: ${{ secrets.GATSBY_SANITY_DATASET }}
 
     steps:
       - uses: actions/checkout@v3
