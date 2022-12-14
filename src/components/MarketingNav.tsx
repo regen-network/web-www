@@ -38,7 +38,6 @@ const MarketingNav: React.FC<{ location: PageProps['location'] }> = ({
     '/wallet-address-registration/': theme.palette.primary.light,
     '/mainnet/': theme.palette.primary.light,
     '/token/': theme.palette.primary.main,
-    '/nct/': theme.palette.primary.main,
   };
 
   const headerTransparent: BoolProps = {
@@ -48,7 +47,7 @@ const MarketingNav: React.FC<{ location: PageProps['location'] }> = ({
   // Links in rest of the site must use the trailing '/'
   // in order for these to work appropriately
   const headerNoBorderBottomPages: RegExp = new RegExp(
-    '//|/partners/|/contact/|/validators/|/resources/|/media/|/team/|/developers/|/science/|/case-studies/|/press-kit/|/community/|/wallet-address-registration/|/mainnet/|/nct/|/token/|/fund/|/case-studies/[a-z-]+//',
+    '//|/partners/|/contact/|/validators/|/resources/|/media/|/team/|/developers/|/science/|/case-studies/|/press-kit/|/community/|/wallet-address-registration/|/mainnet/|/token/|/fund/|/case-studies/[a-z-]+//',
   );
 
   const standardItems: HeaderDropdownItemProps[] = [
@@ -135,7 +134,7 @@ const MarketingNav: React.FC<{ location: PageProps['location'] }> = ({
   const menuItems: HeaderMenuItem[] = [
     {
       title: 'NCT',
-      href: '/nct/',
+      href: 'https://regennetwork.notion.site/A-Guide-to-Nature-Carbon-Ton-NCT-8204ea9d20d0436281f49b8fd1b3fbd2'
     },
     {
       title: 'Program',
