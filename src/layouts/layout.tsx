@@ -25,91 +25,108 @@ const useStyles = makeStyles((theme: Theme) => ({
 const Layout: React.FC<PageProps> = ({ children, location }) => {
   const footerItems: [FooterItem, FooterItem, FooterItem] = [
     {
-      title: 'get involved',
+      title: 'community',
       items: [
         {
-          title: 'Buyers',
-          href: 'https://app.regen.network/buyers/',
+          title: 'Marketplace',
+          href: 'https://app.regen.network',
         },
         {
-          title: 'Land Stewards',
-          href: 'https://app.regen.network/land-stewards/',
+          title: 'Registry',
+          href: 'https://regennetwork.notion.site/Welcome-to-Regen-Registry-0d55aab2a2d64f27aee2a468df172990',
         },
         {
-          title: 'Community',
-          href: '/community/',
+          title: 'Built on Regen',
+          href: 'https://regennetwork.notion.site/Built-On-Regen-Network-c6266114116842e389258747454f9f07',
         },
         {
-          title: 'Developers',
-          href: '/developers/',
+          title: 'Regen Foundation',
+          href: 'https://regen.foundation/',
+          target: '_blank',
         },
         {
-          title: 'Scientists',
-          href: '/science/',
-        },
-        {
-          title: 'Validators',
-          href: '/validators/',
+          title: 'Cerulean Ventures',
+          href: 'https://cerulean.vc/',
+          target: '_blank',
         },
       ],
     },
     {
-      title: 'learn more',
+      title: 'registry',
       items: [
         {
-          title: 'Case Studies',
-          href: '/case-studies/',
+          title: 'Program Guide',
+          href: 'https://library.regen.network/v/regen-registry-program-guide/',
         },
         {
-          title: 'Resources',
-          href: '/resources/',
+          title: 'Create Methodology',
+          href: 'https://library.regen.network/v/regen-registry-program-guide/methodology-development/methodology-development-overview',
+        },
+        {
+          title: 'Metholodology Review',
+          href: 'https://library.regen.network/v/regen-registry-program-guide/methodology-development/methodology-review-process',
+        },
+        {
+          title: 'Metholodology Library',
+          href: 'https://library.regen.network/v/methodology-library/',
+        },
+      ],
+    },
+    {
+      title: 'ecosystem',
+      items: [
+        {
+          title: 'Guides',
+          href: 'https://guides.regen.network/',
+        },
+        {
+          title: 'Governance',
+          href: 'https://forum.regen.network/overview',
+        },
+        {
+          title: 'Docs',
+          href: 'https://docs.regen.network/',
+        },
+        {
+          title: 'Whitepaper',
+          href: 'https://regen-network.gitlab.io/whitepaper/WhitePaper.pdf',
+        },
+        {
+          title: '$Regen Token',
+          href: '/token/',
         },
         {
           title: 'FAQ',
           href: '/faq/',
         },
-        {
-          title: 'Team',
-          href: '/team/',
-        },
-        {
-          title: 'Fund',
-          href: '/fund/',
-        },
-        {
-          title: 'Contact',
-          href: '/contact/',
-        },
       ],
     },
     {
-      title: 'regen',
+      title: 'company',
       items: [
-        {
-          title: 'Partners',
-          href: '/partners/',
-        },
         {
           title: 'Media',
           href: '/media/',
-        },
-        {
-          title: 'Careers',
-          href: 'https://regennetwork.notion.site/Careers-at-Regen-Network-fe7d9645a39843cfb7eaceb7171d95af',
-          target: '_blank',
-        },
-        {
-          title: 'Forum',
-          href: 'https://forum.regen.network/',
-          target: '_blank',
         },
         {
           title: 'Press Kit',
           href: '/press-kit/',
         },
         {
-          title: 'Developer Docs',
-          href: 'https://docs.regen.network',
+          title: 'Team',
+          href: '/team/',
+        },
+        {
+          title: 'Careers',
+          href: 'https://regennetwork.notion.site/Careers-at-Regen-Network-fe7d9645a39843cfb7eaceb7171d95af',
+        },
+        {
+          title: 'Contact',
+          href: '/contact/',
+        },
+        {
+          title: 'Resources',
+          href: '/resources/',
         },
       ],
     },
