@@ -9,7 +9,7 @@
     "@mui/material": "^5.1.0",
     "@mui/styles": "^5.1.0",
     "@reach/router": "^1.1.1",
-    "@regen-network/web-components": "0.1.13",
+    "@regen-network/web-components": "0.2.1",
     "@sanity/image-url": "^1.0.1",
     "axios": "^0.21.1",
     "clean-css": "^5.3.1",

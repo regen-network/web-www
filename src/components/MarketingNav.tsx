@@ -6,6 +6,8 @@ import Header, {
 import { HeaderMenuItem } from '@regen-network/web-components/lib/components/header/HeaderMenuHover';
 import { Theme } from '@regen-network/web-components/lib/theme/muiTheme';
 import { PageProps } from 'gatsby';
+import { Box } from '@mui/material';
+import ContainedButton from '@regen-network/web-components/lib/components/buttons/ContainedButton';
 
 interface BoolProps {
   [key: string]: boolean;
@@ -79,6 +81,16 @@ const MarketingNav: React.FC<{ location: PageProps['location'] }> = ({
           !headerNoBorderBottomPages.test(location.pathname)
         }
         pathname={location.pathname}
+        websiteExtras={
+          <Box display="flex" justifyContent="center" alignItems="center">
+            <ContainedButton
+              size="small"
+              href="https://app.regen.network/projects"
+            >
+              explore credits
+            </ContainedButton>
+          </Box>
+        }
       />
     </>
   );
