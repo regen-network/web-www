@@ -112,7 +112,7 @@ const HomeLedger: React.FC = () => {
           <Body size="xl" mobileSize="md" sx={{ pb: [6, 8.5], pt: [3, 5] }}>
             {content?.ledgerDescription}
           </Body>
-          <ContainedButton size="large" href="/developers">
+          <ContainedButton size="large" href="https://docs.regen.network/">
             Learn More
           </ContainedButton>
         </Grid>
