@@ -46,7 +46,7 @@ const MarketingNav: React.FC<{ location: PageProps['location'] }> = ({
   const menuItems: HeaderMenuItem[] = [
     {
       title: 'NCT',
-      href: 'https://regennetwork.notion.site/A-Guide-to-Nature-Carbon-Ton-NCT-8204ea9d20d0436281f49b8fd1b3fbd2'
+      href: 'https://regennetwork.notion.site/A-Guide-to-Nature-Carbon-Ton-NCT-8204ea9d20d0436281f49b8fd1b3fbd2',
     },
     {
       title: 'Corporate buying',

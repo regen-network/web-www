@@ -3037,6 +3037,7 @@ export type QuerySanityHomePageWebArgs = {
   _key: Maybe<StringQueryOperatorInput>;
   homeFoldSection: Maybe<SanityHomeFoldSectionFilterInput>;
   marketplaceSection: Maybe<SanityMarketplaceSectionFilterInput>;
+  homeWebPartnersSection: Maybe<SanityHomeWebPartnersSectionFilterInput>;
   bannerTextSection: Maybe<SanityTitleImageCustomBodyFilterInput>;
   climateSection: Maybe<SanityClimateSectionFilterInput>;
   carbonPlusSection: Maybe<SanityCarbonPlusSectionFilterInput>;
@@ -3044,6 +3045,7 @@ export type QuerySanityHomePageWebArgs = {
   valuesSection: Maybe<SanityHomeValuesSectionFilterInput>;
   _rawHomeFoldSection: Maybe<JsonQueryOperatorInput>;
   _rawMarketplaceSection: Maybe<JsonQueryOperatorInput>;
+  _rawHomeWebPartnersSection: Maybe<JsonQueryOperatorInput>;
   _rawBannerTextSection: Maybe<JsonQueryOperatorInput>;
   _rawClimateSection: Maybe<JsonQueryOperatorInput>;
   _rawCarbonPlusSection: Maybe<JsonQueryOperatorInput>;
@@ -16775,6 +16777,7 @@ export type SanityHomePageWeb = SanityDocument & Node & {
   _key: Maybe<Scalars['String']>;
   homeFoldSection: Maybe<SanityHomeFoldSection>;
   marketplaceSection: Maybe<SanityMarketplaceSection>;
+  homeWebPartnersSection: Maybe<SanityHomeWebPartnersSection>;
   bannerTextSection: Maybe<SanityTitleImageCustomBody>;
   climateSection: Maybe<SanityClimateSection>;
   carbonPlusSection: Maybe<SanityCarbonPlusSection>;
@@ -16782,6 +16785,7 @@ export type SanityHomePageWeb = SanityDocument & Node & {
   valuesSection: Maybe<SanityHomeValuesSection>;
   _rawHomeFoldSection: Maybe<Scalars['JSON']>;
   _rawMarketplaceSection: Maybe<Scalars['JSON']>;
+  _rawHomeWebPartnersSection: Maybe<Scalars['JSON']>;
   _rawBannerTextSection: Maybe<Scalars['JSON']>;
   _rawClimateSection: Maybe<Scalars['JSON']>;
   _rawCarbonPlusSection: Maybe<Scalars['JSON']>;
@@ -16815,6 +16819,11 @@ export type SanityHomePageWeb_RawHomeFoldSectionArgs = {
 
 
 export type SanityHomePageWeb_RawMarketplaceSectionArgs = {
+  resolveReferences: Maybe<SanityResolveReferencesConfiguration>;
+};
+
+
+export type SanityHomePageWeb_RawHomeWebPartnersSectionArgs = {
   resolveReferences: Maybe<SanityResolveReferencesConfiguration>;
 };
 
@@ -16915,6 +16924,38 @@ export enum SanityHomePageWebFieldsEnum {
   MarketplaceSectionCallToActionsRawImage = 'marketplaceSection___callToActions____rawImage',
   MarketplaceSectionRawBody = 'marketplaceSection____rawBody',
   MarketplaceSectionRawCallToActions = 'marketplaceSection____rawCallToActions',
+  HomeWebPartnersSectionKey = 'homeWebPartnersSection____key',
+  HomeWebPartnersSectionType = 'homeWebPartnersSection____type',
+  HomeWebPartnersSectionTitle = 'homeWebPartnersSection___title',
+  HomeWebPartnersSectionPartners = 'homeWebPartnersSection___partners',
+  HomeWebPartnersSectionPartnersId = 'homeWebPartnersSection___partners____id',
+  HomeWebPartnersSectionPartnersType = 'homeWebPartnersSection___partners____type',
+  HomeWebPartnersSectionPartnersCreatedAt = 'homeWebPartnersSection___partners____createdAt',
+  HomeWebPartnersSectionPartnersUpdatedAt = 'homeWebPartnersSection___partners____updatedAt',
+  HomeWebPartnersSectionPartnersRev = 'homeWebPartnersSection___partners____rev',
+  HomeWebPartnersSectionPartnersKey = 'homeWebPartnersSection___partners____key',
+  HomeWebPartnersSectionPartnersName = 'homeWebPartnersSection___partners___name',
+  HomeWebPartnersSectionPartnersLogoKey = 'homeWebPartnersSection___partners___logo____key',
+  HomeWebPartnersSectionPartnersLogoType = 'homeWebPartnersSection___partners___logo____type',
+  HomeWebPartnersSectionPartnersLogoRawAsset = 'homeWebPartnersSection___partners___logo____rawAsset',
+  HomeWebPartnersSectionPartnersLogoRawHotspot = 'homeWebPartnersSection___partners___logo____rawHotspot',
+  HomeWebPartnersSectionPartnersLogoRawCrop = 'homeWebPartnersSection___partners___logo____rawCrop',
+  HomeWebPartnersSectionPartnersRawLogo = 'homeWebPartnersSection___partners____rawLogo',
+  HomeWebPartnersSectionPartnersId = 'homeWebPartnersSection___partners___id',
+  HomeWebPartnersSectionPartnersParentId = 'homeWebPartnersSection___partners___parent___id',
+  HomeWebPartnersSectionPartnersParentChildren = 'homeWebPartnersSection___partners___parent___children',
+  HomeWebPartnersSectionPartnersChildren = 'homeWebPartnersSection___partners___children',
+  HomeWebPartnersSectionPartnersChildrenId = 'homeWebPartnersSection___partners___children___id',
+  HomeWebPartnersSectionPartnersChildrenChildren = 'homeWebPartnersSection___partners___children___children',
+  HomeWebPartnersSectionPartnersInternalContent = 'homeWebPartnersSection___partners___internal___content',
+  HomeWebPartnersSectionPartnersInternalContentDigest = 'homeWebPartnersSection___partners___internal___contentDigest',
+  HomeWebPartnersSectionPartnersInternalDescription = 'homeWebPartnersSection___partners___internal___description',
+  HomeWebPartnersSectionPartnersInternalFieldOwners = 'homeWebPartnersSection___partners___internal___fieldOwners',
+  HomeWebPartnersSectionPartnersInternalIgnoreType = 'homeWebPartnersSection___partners___internal___ignoreType',
+  HomeWebPartnersSectionPartnersInternalMediaType = 'homeWebPartnersSection___partners___internal___mediaType',
+  HomeWebPartnersSectionPartnersInternalOwner = 'homeWebPartnersSection___partners___internal___owner',
+  HomeWebPartnersSectionPartnersInternalType = 'homeWebPartnersSection___partners___internal___type',
+  HomeWebPartnersSectionRawPartners = 'homeWebPartnersSection____rawPartners',
   BannerTextSectionKey = 'bannerTextSection____key',
   BannerTextSectionType = 'bannerTextSection____type',
   BannerTextSectionTitle = 'bannerTextSection___title',
@@ -17022,6 +17063,7 @@ export enum SanityHomePageWebFieldsEnum {
   ValuesSectionRawImageItems = 'valuesSection____rawImageItems',
   RawHomeFoldSection = '_rawHomeFoldSection',
   RawMarketplaceSection = '_rawMarketplaceSection',
+  RawHomeWebPartnersSection = '_rawHomeWebPartnersSection',
   RawBannerTextSection = '_rawBannerTextSection',
   RawClimateSection = '_rawClimateSection',
   RawCarbonPlusSection = '_rawCarbonPlusSection',
@@ -17123,6 +17165,7 @@ export type SanityHomePageWebFilterInput = {
   _key: Maybe<StringQueryOperatorInput>;
   homeFoldSection: Maybe<SanityHomeFoldSectionFilterInput>;
   marketplaceSection: Maybe<SanityMarketplaceSectionFilterInput>;
+  homeWebPartnersSection: Maybe<SanityHomeWebPartnersSectionFilterInput>;
   bannerTextSection: Maybe<SanityTitleImageCustomBodyFilterInput>;
   climateSection: Maybe<SanityClimateSectionFilterInput>;
   carbonPlusSection: Maybe<SanityCarbonPlusSectionFilterInput>;
@@ -17130,6 +17173,7 @@ export type SanityHomePageWebFilterInput = {
   valuesSection: Maybe<SanityHomeValuesSectionFilterInput>;
   _rawHomeFoldSection: Maybe<JsonQueryOperatorInput>;
   _rawMarketplaceSection: Maybe<JsonQueryOperatorInput>;
+  _rawHomeWebPartnersSection: Maybe<JsonQueryOperatorInput>;
   _rawBannerTextSection: Maybe<JsonQueryOperatorInput>;
   _rawClimateSection: Maybe<JsonQueryOperatorInput>;
   _rawCarbonPlusSection: Maybe<JsonQueryOperatorInput>;
@@ -17175,6 +17219,28 @@ export type SanityHomeValuesSectionFilterInput = {
   header: Maybe<StringQueryOperatorInput>;
   imageItems: Maybe<SanityValuesImageItemFilterListInput>;
   _rawImageItems: Maybe<JsonQueryOperatorInput>;
+};
+
+export type SanityHomeWebPartnersSection = {
+  __typename?: 'SanityHomeWebPartnersSection';
+  _key: Maybe<Scalars['String']>;
+  _type: Maybe<Scalars['String']>;
+  title: Maybe<Scalars['String']>;
+  partners: Maybe<Array<Maybe<SanityPartner>>>;
+  _rawPartners: Maybe<Scalars['JSON']>;
+};
+
+
+export type SanityHomeWebPartnersSection_RawPartnersArgs = {
+  resolveReferences: Maybe<SanityResolveReferencesConfiguration>;
+};
+
+export type SanityHomeWebPartnersSectionFilterInput = {
+  _key: Maybe<StringQueryOperatorInput>;
+  _type: Maybe<StringQueryOperatorInput>;
+  title: Maybe<StringQueryOperatorInput>;
+  partners: Maybe<SanityPartnerFilterListInput>;
+  _rawPartners: Maybe<JsonQueryOperatorInput>;
 };
 
 export type SanityImage = {
@@ -31480,16 +31546,7 @@ export type HomeFoldSectionQueryVariables = Exact<{ [key: string]: never; }>;
 
 export type HomeFoldSectionQuery = (
   { __typename?: 'Query' }
-  & { desktop: Maybe<(
-    { __typename?: 'File' }
-    & { childImageSharp: Maybe<(
-      { __typename?: 'ImageSharp' }
-      & { fluid: Maybe<(
-        { __typename?: 'ImageSharpFluid' }
-        & GatsbyImageSharpFluid_WithWebpFragment
-      )> }
-    )> }
-  )>, sanityHomePageWeb: Maybe<(
+  & { sanityHomePageWeb: Maybe<(
     { __typename?: 'SanityHomePageWeb' }
     & { homeFoldSection: Maybe<(
       { __typename?: 'SanityHomeFoldSection' }
@@ -31563,6 +31620,31 @@ export type HomeMarketPlaceSectionQuery = (
       )>, callToActions: Maybe<Array<Maybe<(
         { __typename?: 'SanityCallToAction' }
         & CallToActionFieldsFragment
+      )>>> }
+    )> }
+  )> }
+);
+
+export type HomePartnersSectionQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+export type HomePartnersSectionQuery = (
+  { __typename?: 'Query' }
+  & { sanityHomePageWeb: Maybe<(
+    { __typename?: 'SanityHomePageWeb' }
+    & { homeWebPartnersSection: Maybe<(
+      { __typename?: 'SanityHomeWebPartnersSection' }
+      & Pick<SanityHomeWebPartnersSection, 'title'>
+      & { partners: Maybe<Array<Maybe<(
+        { __typename?: 'SanityPartner' }
+        & Pick<SanityPartner, 'name'>
+        & { logo: Maybe<(
+          { __typename?: 'SanityImage' }
+          & { asset: Maybe<(
+            { __typename?: 'SanityImageAsset' }
+            & Pick<SanityImageAsset, 'url'>
+          )> }
+        )> }
       )>>> }
     )> }
   )> }

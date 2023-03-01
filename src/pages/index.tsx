@@ -13,6 +13,7 @@ import HomeLedger from '../sections/home/LedgerSection';
 import MarketplaceSection from '../sections/home/MarketplaceSection';
 import HomeValuesSection from '../sections/home/ValuesSection';
 import BlogSection from '../sections/shared/BlogSection';
+import PartnersSection from '../sections/home/PartnersSection';
 
 const query = graphql`
   query homePageWeb {
@@ -72,6 +73,7 @@ const IndexPage: React.FC<PageProps> = ({ location }) => {
         </BackgroundImage>
       </Box>
       <MarketplaceSection />
+      <PartnersSection />
       <HomeValuesSection />
       <HomeLedger />
       <BlogSection />
