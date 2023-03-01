@@ -66,7 +66,7 @@ const HomeFoldSection: React.FC<{ className?: string }> = ({ className }) => {
       sx={[
         {
           background: `url(${bgImage})`,
-          paddingTop: { xs: 23.75, sm: 40 },
+          paddingTop: { xs: 23.75, sm: 58, xl: 40 },
           height: { xs: 550, sm: 864 },
         },
       ]}

@@ -71,8 +71,8 @@ const IndexPage: React.FC<PageProps> = ({ location }) => {
           <ClimateSection />
         </BackgroundImage>
       </Box>
-      <HomeValuesSection />
       <MarketplaceSection />
+      <HomeValuesSection />
       <HomeLedger />
       <BlogSection />
     </>
