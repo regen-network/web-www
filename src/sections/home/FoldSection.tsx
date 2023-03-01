@@ -1,4 +1,3 @@
-import React from 'react';
 import { Box } from '@mui/material';
 import { makeStyles } from '@mui/styles';
 import {
@@ -8,7 +7,7 @@ import {
 import { Theme } from '@regen-network/web-components/lib/theme/muiTheme';
 import clsx from 'clsx';
 import { graphql, useStaticQuery } from 'gatsby';
-import BackgroundImage from 'gatsby-background-image';
+import React from 'react';
 
 import { HomeFoldSectionQuery } from '../../generated/graphql';
 
@@ -18,21 +17,9 @@ const useStyles = makeStyles((theme: Theme) => ({
     textAlign: 'center',
     color: theme.palette.primary.main,
     width: '100%',
-    height: '90vh',
     backgroundPosition: 'bottom center',
     backgroundRepeat: 'repeat-y',
     backgroundSize: 'cover',
-    [theme.breakpoints.up('sm')]: {
-      paddingTop: '29vh',
-      paddingBottom: '40vh',
-    },
-    [theme.breakpoints.down(theme.breakpoints.values.tablet)]: {
-      paddingTop: '12vh',
-    },
-    [theme.breakpoints.down('sm')]: {
-      paddingTop: '15vh',
-      height: '80vh',
-    },
   },
   backgroundGradient: {
     height: '100%',
@@ -48,17 +35,19 @@ const useStyles = makeStyles((theme: Theme) => ({
 
 const query = graphql`
   query homeFoldSection {
-    desktop: file(relativePath: { eq: "image43.jpg" }) {
-      childImageSharp {
-        fluid(quality: 90, maxWidth: 1920) {
-          ...GatsbyImageSharpFluid_withWebp
-        }
-      }
-    }
     sanityHomePageWeb {
       homeFoldSection {
         title
         body
+        image {
+          imageHref
+          imageAlt
+          image {
+            asset {
+              url
+            }
+          }
+        }
       }
     }
   }
@@ -68,13 +57,20 @@ const HomeFoldSection: React.FC<{ className?: string }> = ({ className }) => {
   const styles = useStyles();
   const data = useStaticQuery<HomeFoldSectionQuery>(query);
   const content = data.sanityHomePageWeb?.homeFoldSection;
+  const bgImage =
+    data?.sanityHomePageWeb?.homeFoldSection?.image?.image?.asset?.url ??
+    data?.sanityHomePageWeb?.homeFoldSection?.image?.imageHref;
 
   return (
-    <BackgroundImage
-      Tag="section"
+    <Box
+      sx={[
+        {
+          background: `url(${bgImage})`,
+          paddingTop: { xs: 23.75, sm: 40 },
+          height: { xs: 550, sm: 864 },
+        },
+      ]}
       className={clsx(styles.root, className)}
-      fluid={data?.desktop?.childImageSharp?.fluid as any}
-      backgroundColor={`#040e18`}
     >
       <Box
         sx={{
@@ -92,7 +88,6 @@ const HomeFoldSection: React.FC<{ className?: string }> = ({ className }) => {
           sx={{
             mx: 'auto',
             maxWidth: '80%',
-            mt: { xs: 13.5, sm: 21.5 },
             mb: 3,
           }}
         >
@@ -104,8 +99,8 @@ const HomeFoldSection: React.FC<{ className?: string }> = ({ className }) => {
             size="xl"
             sx={{
               textAlign: 'center',
-              fontSize: ['1.125rem', '1.62rem'],
-              maxWidth: ['90%', 650],
+              fontSize: { xs: '1.125rem', sm: '1.62rem' },
+              maxWidth: { xs: '90%', sm: 650 },
               textShadow: '0px 4px 10px rgba(0, 0, 0, 0.3)',
             }}
           >
@@ -113,7 +108,7 @@ const HomeFoldSection: React.FC<{ className?: string }> = ({ className }) => {
           </Body>
         </Box>
       </Box>
-    </BackgroundImage>
+    </Box>
   );
 };
 
