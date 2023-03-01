@@ -3241,10 +3241,10 @@
     prop-types "^15.6.1"
     react-lifecycles-compat "^3.0.4"
 
-"@regen-network/web-components@0.2.3":
-  version "0.2.3"
-  resolved "https://registry.yarnpkg.com/@regen-network/web-components/-/web-components-0.2.3.tgz#948d278874c1a1cd45d4436f846cd35b6e8b2737"
-  integrity sha512-/qPSpVwS6Te3epLB0XUQWZVMrTS8dQrdGJgVVFHw1yZH7XmQJN3w4uL5pWrEFJCKwYUceoY0M46qQIMYp24u9w==
+"@regen-network/web-components@0.2.4":
+  version "0.2.4"
+  resolved "https://registry.yarnpkg.com/@regen-network/web-components/-/web-components-0.2.4.tgz#82e5e14979658167cdad0426a31491182d24401a"
+  integrity sha512-/TUrjO6RDuXS29ecHUS74YrhG0c5pLSULXkwFM5mebinHyyPZXu0cvX/KwAjXTsJq58K6kGuALqycIAL8io67A==
   dependencies:
     "@emotion/react" "^11.5.0"
     "@emotion/styled" "^11.3.0"

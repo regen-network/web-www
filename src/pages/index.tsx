@@ -14,6 +14,7 @@ import MarketplaceSection from '../sections/home/MarketplaceSection';
 import HomeValuesSection from '../sections/home/ValuesSection';
 import BlogSection from '../sections/shared/BlogSection';
 import PartnersSection from '../sections/home/PartnersSection';
+import EcologicalCreditCardsSection from '../sections/home/EcologicalCreditCardsSection';
 
 const query = graphql`
   query homePageWeb {
@@ -74,6 +75,7 @@ const IndexPage: React.FC<PageProps> = ({ location }) => {
       </Box>
       <MarketplaceSection />
       <PartnersSection />
+      <EcologicalCreditCardsSection />
       <HomeValuesSection />
       <HomeLedger />
       <BlogSection />

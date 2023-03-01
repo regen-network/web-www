@@ -3038,6 +3038,7 @@ export type QuerySanityHomePageWebArgs = {
   homeFoldSection: Maybe<SanityHomeFoldSectionFilterInput>;
   marketplaceSection: Maybe<SanityMarketplaceSectionFilterInput>;
   homeWebPartnersSection: Maybe<SanityHomeWebPartnersSectionFilterInput>;
+  homeWebEcologicalCreditCardsSection: Maybe<SanityHomeWebEcologicalCreditCardsSectionFilterInput>;
   bannerTextSection: Maybe<SanityTitleImageCustomBodyFilterInput>;
   climateSection: Maybe<SanityClimateSectionFilterInput>;
   carbonPlusSection: Maybe<SanityCarbonPlusSectionFilterInput>;
@@ -3046,6 +3047,7 @@ export type QuerySanityHomePageWebArgs = {
   _rawHomeFoldSection: Maybe<JsonQueryOperatorInput>;
   _rawMarketplaceSection: Maybe<JsonQueryOperatorInput>;
   _rawHomeWebPartnersSection: Maybe<JsonQueryOperatorInput>;
+  _rawHomeWebEcologicalCreditCardsSection: Maybe<JsonQueryOperatorInput>;
   _rawBannerTextSection: Maybe<JsonQueryOperatorInput>;
   _rawClimateSection: Maybe<JsonQueryOperatorInput>;
   _rawCarbonPlusSection: Maybe<JsonQueryOperatorInput>;
@@ -16778,6 +16780,7 @@ export type SanityHomePageWeb = SanityDocument & Node & {
   homeFoldSection: Maybe<SanityHomeFoldSection>;
   marketplaceSection: Maybe<SanityMarketplaceSection>;
   homeWebPartnersSection: Maybe<SanityHomeWebPartnersSection>;
+  homeWebEcologicalCreditCardsSection: Maybe<SanityHomeWebEcologicalCreditCardsSection>;
   bannerTextSection: Maybe<SanityTitleImageCustomBody>;
   climateSection: Maybe<SanityClimateSection>;
   carbonPlusSection: Maybe<SanityCarbonPlusSection>;
@@ -16786,6 +16789,7 @@ export type SanityHomePageWeb = SanityDocument & Node & {
   _rawHomeFoldSection: Maybe<Scalars['JSON']>;
   _rawMarketplaceSection: Maybe<Scalars['JSON']>;
   _rawHomeWebPartnersSection: Maybe<Scalars['JSON']>;
+  _rawHomeWebEcologicalCreditCardsSection: Maybe<Scalars['JSON']>;
   _rawBannerTextSection: Maybe<Scalars['JSON']>;
   _rawClimateSection: Maybe<Scalars['JSON']>;
   _rawCarbonPlusSection: Maybe<Scalars['JSON']>;
@@ -16824,6 +16828,11 @@ export type SanityHomePageWeb_RawMarketplaceSectionArgs = {
 
 
 export type SanityHomePageWeb_RawHomeWebPartnersSectionArgs = {
+  resolveReferences: Maybe<SanityResolveReferencesConfiguration>;
+};
+
+
+export type SanityHomePageWeb_RawHomeWebEcologicalCreditCardsSectionArgs = {
   resolveReferences: Maybe<SanityResolveReferencesConfiguration>;
 };
 
@@ -16956,6 +16965,87 @@ export enum SanityHomePageWebFieldsEnum {
   HomeWebPartnersSectionPartnersInternalOwner = 'homeWebPartnersSection___partners___internal___owner',
   HomeWebPartnersSectionPartnersInternalType = 'homeWebPartnersSection___partners___internal___type',
   HomeWebPartnersSectionRawPartners = 'homeWebPartnersSection____rawPartners',
+  HomeWebEcologicalCreditCardsSectionKey = 'homeWebEcologicalCreditCardsSection____key',
+  HomeWebEcologicalCreditCardsSectionType = 'homeWebEcologicalCreditCardsSection____type',
+  HomeWebEcologicalCreditCardsSectionTitle = 'homeWebEcologicalCreditCardsSection___title',
+  HomeWebEcologicalCreditCardsSectionCards = 'homeWebEcologicalCreditCardsSection___cards',
+  HomeWebEcologicalCreditCardsSectionCardsId = 'homeWebEcologicalCreditCardsSection___cards____id',
+  HomeWebEcologicalCreditCardsSectionCardsType = 'homeWebEcologicalCreditCardsSection___cards____type',
+  HomeWebEcologicalCreditCardsSectionCardsCreatedAt = 'homeWebEcologicalCreditCardsSection___cards____createdAt',
+  HomeWebEcologicalCreditCardsSectionCardsUpdatedAt = 'homeWebEcologicalCreditCardsSection___cards____updatedAt',
+  HomeWebEcologicalCreditCardsSectionCardsRev = 'homeWebEcologicalCreditCardsSection___cards____rev',
+  HomeWebEcologicalCreditCardsSectionCardsKey = 'homeWebEcologicalCreditCardsSection___cards____key',
+  HomeWebEcologicalCreditCardsSectionCardsTitle = 'homeWebEcologicalCreditCardsSection___cards___title',
+  HomeWebEcologicalCreditCardsSectionCardsDescription = 'homeWebEcologicalCreditCardsSection___cards___description',
+  HomeWebEcologicalCreditCardsSectionCardsImageKey = 'homeWebEcologicalCreditCardsSection___cards___image____key',
+  HomeWebEcologicalCreditCardsSectionCardsImageType = 'homeWebEcologicalCreditCardsSection___cards___image____type',
+  HomeWebEcologicalCreditCardsSectionCardsImageImageHref = 'homeWebEcologicalCreditCardsSection___cards___image___imageHref',
+  HomeWebEcologicalCreditCardsSectionCardsImageImageAlt = 'homeWebEcologicalCreditCardsSection___cards___image___imageAlt',
+  HomeWebEcologicalCreditCardsSectionCardsImageRawImage = 'homeWebEcologicalCreditCardsSection___cards___image____rawImage',
+  HomeWebEcologicalCreditCardsSectionCardsTypeId = 'homeWebEcologicalCreditCardsSection___cards___type____id',
+  HomeWebEcologicalCreditCardsSectionCardsTypeType = 'homeWebEcologicalCreditCardsSection___cards___type____type',
+  HomeWebEcologicalCreditCardsSectionCardsTypeCreatedAt = 'homeWebEcologicalCreditCardsSection___cards___type____createdAt',
+  HomeWebEcologicalCreditCardsSectionCardsTypeUpdatedAt = 'homeWebEcologicalCreditCardsSection___cards___type____updatedAt',
+  HomeWebEcologicalCreditCardsSectionCardsTypeRev = 'homeWebEcologicalCreditCardsSection___cards___type____rev',
+  HomeWebEcologicalCreditCardsSectionCardsTypeKey = 'homeWebEcologicalCreditCardsSection___cards___type____key',
+  HomeWebEcologicalCreditCardsSectionCardsTypeName = 'homeWebEcologicalCreditCardsSection___cards___type___name',
+  HomeWebEcologicalCreditCardsSectionCardsTypeRawImage = 'homeWebEcologicalCreditCardsSection___cards___type____rawImage',
+  HomeWebEcologicalCreditCardsSectionCardsTypeId = 'homeWebEcologicalCreditCardsSection___cards___type___id',
+  HomeWebEcologicalCreditCardsSectionCardsTypeChildren = 'homeWebEcologicalCreditCardsSection___cards___type___children',
+  HomeWebEcologicalCreditCardsSectionCardsCreditInfosKey = 'homeWebEcologicalCreditCardsSection___cards___creditInfos____key',
+  HomeWebEcologicalCreditCardsSectionCardsCreditInfosType = 'homeWebEcologicalCreditCardsSection___cards___creditInfos____type',
+  HomeWebEcologicalCreditCardsSectionCardsCreditInfosCountry = 'homeWebEcologicalCreditCardsSection___cards___creditInfos___country',
+  HomeWebEcologicalCreditCardsSectionCardsCreditInfosPrice = 'homeWebEcologicalCreditCardsSection___cards___creditInfos___price',
+  HomeWebEcologicalCreditCardsSectionCardsCreditInfosCount = 'homeWebEcologicalCreditCardsSection___cards___creditInfos___count',
+  HomeWebEcologicalCreditCardsSectionCardsOffsetMethods = 'homeWebEcologicalCreditCardsSection___cards___offsetMethods',
+  HomeWebEcologicalCreditCardsSectionCardsOffsetMethodsId = 'homeWebEcologicalCreditCardsSection___cards___offsetMethods____id',
+  HomeWebEcologicalCreditCardsSectionCardsOffsetMethodsType = 'homeWebEcologicalCreditCardsSection___cards___offsetMethods____type',
+  HomeWebEcologicalCreditCardsSectionCardsOffsetMethodsCreatedAt = 'homeWebEcologicalCreditCardsSection___cards___offsetMethods____createdAt',
+  HomeWebEcologicalCreditCardsSectionCardsOffsetMethodsUpdatedAt = 'homeWebEcologicalCreditCardsSection___cards___offsetMethods____updatedAt',
+  HomeWebEcologicalCreditCardsSectionCardsOffsetMethodsRev = 'homeWebEcologicalCreditCardsSection___cards___offsetMethods____rev',
+  HomeWebEcologicalCreditCardsSectionCardsOffsetMethodsKey = 'homeWebEcologicalCreditCardsSection___cards___offsetMethods____key',
+  HomeWebEcologicalCreditCardsSectionCardsOffsetMethodsName = 'homeWebEcologicalCreditCardsSection___cards___offsetMethods___name',
+  HomeWebEcologicalCreditCardsSectionCardsOffsetMethodsRawIcon = 'homeWebEcologicalCreditCardsSection___cards___offsetMethods____rawIcon',
+  HomeWebEcologicalCreditCardsSectionCardsOffsetMethodsId = 'homeWebEcologicalCreditCardsSection___cards___offsetMethods___id',
+  HomeWebEcologicalCreditCardsSectionCardsOffsetMethodsChildren = 'homeWebEcologicalCreditCardsSection___cards___offsetMethods___children',
+  HomeWebEcologicalCreditCardsSectionCardsProjectActivities = 'homeWebEcologicalCreditCardsSection___cards___projectActivities',
+  HomeWebEcologicalCreditCardsSectionCardsProjectActivitiesId = 'homeWebEcologicalCreditCardsSection___cards___projectActivities____id',
+  HomeWebEcologicalCreditCardsSectionCardsProjectActivitiesType = 'homeWebEcologicalCreditCardsSection___cards___projectActivities____type',
+  HomeWebEcologicalCreditCardsSectionCardsProjectActivitiesCreatedAt = 'homeWebEcologicalCreditCardsSection___cards___projectActivities____createdAt',
+  HomeWebEcologicalCreditCardsSectionCardsProjectActivitiesUpdatedAt = 'homeWebEcologicalCreditCardsSection___cards___projectActivities____updatedAt',
+  HomeWebEcologicalCreditCardsSectionCardsProjectActivitiesRev = 'homeWebEcologicalCreditCardsSection___cards___projectActivities____rev',
+  HomeWebEcologicalCreditCardsSectionCardsProjectActivitiesKey = 'homeWebEcologicalCreditCardsSection___cards___projectActivities____key',
+  HomeWebEcologicalCreditCardsSectionCardsProjectActivitiesName = 'homeWebEcologicalCreditCardsSection___cards___projectActivities___name',
+  HomeWebEcologicalCreditCardsSectionCardsProjectActivitiesRawIcon = 'homeWebEcologicalCreditCardsSection___cards___projectActivities____rawIcon',
+  HomeWebEcologicalCreditCardsSectionCardsProjectActivitiesId = 'homeWebEcologicalCreditCardsSection___cards___projectActivities___id',
+  HomeWebEcologicalCreditCardsSectionCardsProjectActivitiesChildren = 'homeWebEcologicalCreditCardsSection___cards___projectActivities___children',
+  HomeWebEcologicalCreditCardsSectionCardsButtonKey = 'homeWebEcologicalCreditCardsSection___cards___button____key',
+  HomeWebEcologicalCreditCardsSectionCardsButtonType = 'homeWebEcologicalCreditCardsSection___cards___button____type',
+  HomeWebEcologicalCreditCardsSectionCardsButtonButtonText = 'homeWebEcologicalCreditCardsSection___cards___button___buttonText',
+  HomeWebEcologicalCreditCardsSectionCardsButtonButtonModal = 'homeWebEcologicalCreditCardsSection___cards___button___buttonModal',
+  HomeWebEcologicalCreditCardsSectionCardsButtonButtonBlankTarget = 'homeWebEcologicalCreditCardsSection___cards___button___buttonBlankTarget',
+  HomeWebEcologicalCreditCardsSectionCardsButtonRawButtonLink = 'homeWebEcologicalCreditCardsSection___cards___button____rawButtonLink',
+  HomeWebEcologicalCreditCardsSectionCardsRawImage = 'homeWebEcologicalCreditCardsSection___cards____rawImage',
+  HomeWebEcologicalCreditCardsSectionCardsRawType = 'homeWebEcologicalCreditCardsSection___cards____rawType',
+  HomeWebEcologicalCreditCardsSectionCardsRawCreditInfos = 'homeWebEcologicalCreditCardsSection___cards____rawCreditInfos',
+  HomeWebEcologicalCreditCardsSectionCardsRawOffsetMethods = 'homeWebEcologicalCreditCardsSection___cards____rawOffsetMethods',
+  HomeWebEcologicalCreditCardsSectionCardsRawProjectActivities = 'homeWebEcologicalCreditCardsSection___cards____rawProjectActivities',
+  HomeWebEcologicalCreditCardsSectionCardsRawButton = 'homeWebEcologicalCreditCardsSection___cards____rawButton',
+  HomeWebEcologicalCreditCardsSectionCardsId = 'homeWebEcologicalCreditCardsSection___cards___id',
+  HomeWebEcologicalCreditCardsSectionCardsParentId = 'homeWebEcologicalCreditCardsSection___cards___parent___id',
+  HomeWebEcologicalCreditCardsSectionCardsParentChildren = 'homeWebEcologicalCreditCardsSection___cards___parent___children',
+  HomeWebEcologicalCreditCardsSectionCardsChildren = 'homeWebEcologicalCreditCardsSection___cards___children',
+  HomeWebEcologicalCreditCardsSectionCardsChildrenId = 'homeWebEcologicalCreditCardsSection___cards___children___id',
+  HomeWebEcologicalCreditCardsSectionCardsChildrenChildren = 'homeWebEcologicalCreditCardsSection___cards___children___children',
+  HomeWebEcologicalCreditCardsSectionCardsInternalContent = 'homeWebEcologicalCreditCardsSection___cards___internal___content',
+  HomeWebEcologicalCreditCardsSectionCardsInternalContentDigest = 'homeWebEcologicalCreditCardsSection___cards___internal___contentDigest',
+  HomeWebEcologicalCreditCardsSectionCardsInternalDescription = 'homeWebEcologicalCreditCardsSection___cards___internal___description',
+  HomeWebEcologicalCreditCardsSectionCardsInternalFieldOwners = 'homeWebEcologicalCreditCardsSection___cards___internal___fieldOwners',
+  HomeWebEcologicalCreditCardsSectionCardsInternalIgnoreType = 'homeWebEcologicalCreditCardsSection___cards___internal___ignoreType',
+  HomeWebEcologicalCreditCardsSectionCardsInternalMediaType = 'homeWebEcologicalCreditCardsSection___cards___internal___mediaType',
+  HomeWebEcologicalCreditCardsSectionCardsInternalOwner = 'homeWebEcologicalCreditCardsSection___cards___internal___owner',
+  HomeWebEcologicalCreditCardsSectionCardsInternalType = 'homeWebEcologicalCreditCardsSection___cards___internal___type',
+  HomeWebEcologicalCreditCardsSectionRawCards = 'homeWebEcologicalCreditCardsSection____rawCards',
   BannerTextSectionKey = 'bannerTextSection____key',
   BannerTextSectionType = 'bannerTextSection____type',
   BannerTextSectionTitle = 'bannerTextSection___title',
@@ -17064,6 +17154,7 @@ export enum SanityHomePageWebFieldsEnum {
   RawHomeFoldSection = '_rawHomeFoldSection',
   RawMarketplaceSection = '_rawMarketplaceSection',
   RawHomeWebPartnersSection = '_rawHomeWebPartnersSection',
+  RawHomeWebEcologicalCreditCardsSection = '_rawHomeWebEcologicalCreditCardsSection',
   RawBannerTextSection = '_rawBannerTextSection',
   RawClimateSection = '_rawClimateSection',
   RawCarbonPlusSection = '_rawCarbonPlusSection',
@@ -17166,6 +17257,7 @@ export type SanityHomePageWebFilterInput = {
   homeFoldSection: Maybe<SanityHomeFoldSectionFilterInput>;
   marketplaceSection: Maybe<SanityMarketplaceSectionFilterInput>;
   homeWebPartnersSection: Maybe<SanityHomeWebPartnersSectionFilterInput>;
+  homeWebEcologicalCreditCardsSection: Maybe<SanityHomeWebEcologicalCreditCardsSectionFilterInput>;
   bannerTextSection: Maybe<SanityTitleImageCustomBodyFilterInput>;
   climateSection: Maybe<SanityClimateSectionFilterInput>;
   carbonPlusSection: Maybe<SanityCarbonPlusSectionFilterInput>;
@@ -17174,6 +17266,7 @@ export type SanityHomePageWebFilterInput = {
   _rawHomeFoldSection: Maybe<JsonQueryOperatorInput>;
   _rawMarketplaceSection: Maybe<JsonQueryOperatorInput>;
   _rawHomeWebPartnersSection: Maybe<JsonQueryOperatorInput>;
+  _rawHomeWebEcologicalCreditCardsSection: Maybe<JsonQueryOperatorInput>;
   _rawBannerTextSection: Maybe<JsonQueryOperatorInput>;
   _rawClimateSection: Maybe<JsonQueryOperatorInput>;
   _rawCarbonPlusSection: Maybe<JsonQueryOperatorInput>;
@@ -17219,6 +17312,28 @@ export type SanityHomeValuesSectionFilterInput = {
   header: Maybe<StringQueryOperatorInput>;
   imageItems: Maybe<SanityValuesImageItemFilterListInput>;
   _rawImageItems: Maybe<JsonQueryOperatorInput>;
+};
+
+export type SanityHomeWebEcologicalCreditCardsSection = {
+  __typename?: 'SanityHomeWebEcologicalCreditCardsSection';
+  _key: Maybe<Scalars['String']>;
+  _type: Maybe<Scalars['String']>;
+  title: Maybe<Scalars['String']>;
+  cards: Maybe<Array<Maybe<SanityEcologicalCreditCard>>>;
+  _rawCards: Maybe<Scalars['JSON']>;
+};
+
+
+export type SanityHomeWebEcologicalCreditCardsSection_RawCardsArgs = {
+  resolveReferences: Maybe<SanityResolveReferencesConfiguration>;
+};
+
+export type SanityHomeWebEcologicalCreditCardsSectionFilterInput = {
+  _key: Maybe<StringQueryOperatorInput>;
+  _type: Maybe<StringQueryOperatorInput>;
+  title: Maybe<StringQueryOperatorInput>;
+  cards: Maybe<SanityEcologicalCreditCardFilterListInput>;
+  _rawCards: Maybe<JsonQueryOperatorInput>;
 };
 
 export type SanityHomeWebPartnersSection = {
@@ -31537,6 +31652,75 @@ export type HomeClimateSectionQuery = (
         { __typename?: 'SanityTitleBody' }
         & Pick<SanityTitleBody, 'title' | 'body'>
       )> }
+    )> }
+  )> }
+);
+
+export type HomeWebEcologicalCreditCardsSectionQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+export type HomeWebEcologicalCreditCardsSectionQuery = (
+  { __typename?: 'Query' }
+  & { sanityHomePageWeb: Maybe<(
+    { __typename?: 'SanityHomePageWeb' }
+    & { homeWebEcologicalCreditCardsSection: Maybe<(
+      { __typename?: 'SanityHomeWebEcologicalCreditCardsSection' }
+      & Pick<SanityHomeWebEcologicalCreditCardsSection, 'title'>
+      & { cards: Maybe<Array<Maybe<(
+        { __typename?: 'SanityEcologicalCreditCard' }
+        & Pick<SanityEcologicalCreditCard, 'title' | 'description'>
+        & { image: Maybe<(
+          { __typename?: 'SanityCustomImage' }
+          & Pick<SanityCustomImage, 'imageHref' | 'imageAlt'>
+          & { image: Maybe<(
+            { __typename?: 'SanityImage' }
+            & { asset: Maybe<(
+              { __typename?: 'SanityImageAsset' }
+              & Pick<SanityImageAsset, 'url'>
+            )> }
+          )> }
+        )>, type: Maybe<(
+          { __typename?: 'SanityCreditType' }
+          & Pick<SanityCreditType, 'name'>
+          & { image: Maybe<(
+            { __typename?: 'SanityImage' }
+            & { asset: Maybe<(
+              { __typename?: 'SanityImageAsset' }
+              & Pick<SanityImageAsset, 'url'>
+            )> }
+          )> }
+        )>, creditInfos: Maybe<(
+          { __typename?: 'SanityCreditInfos' }
+          & Pick<SanityCreditInfos, 'country' | 'price' | 'count'>
+        )>, offsetMethods: Maybe<Array<Maybe<(
+          { __typename?: 'SanityOffsetMethod' }
+          & Pick<SanityOffsetMethod, 'name'>
+          & { icon: Maybe<(
+            { __typename?: 'SanityImage' }
+            & { asset: Maybe<(
+              { __typename?: 'SanityImageAsset' }
+              & Pick<SanityImageAsset, 'url'>
+            )> }
+          )> }
+        )>>>, projectActivities: Maybe<Array<Maybe<(
+          { __typename?: 'SanityProjectActivity' }
+          & Pick<SanityProjectActivity, 'name'>
+          & { icon: Maybe<(
+            { __typename?: 'SanityImage' }
+            & { asset: Maybe<(
+              { __typename?: 'SanityImageAsset' }
+              & Pick<SanityImageAsset, 'url'>
+            )> }
+          )> }
+        )>>>, button: Maybe<(
+          { __typename?: 'SanityButton' }
+          & Pick<SanityButton, 'buttonText'>
+          & { buttonLink: Maybe<(
+            { __typename?: 'SanityLink' }
+            & Pick<SanityLink, 'buttonHref'>
+          )> }
+        )> }
+      )>>> }
     )> }
   )> }
 );
