@@ -2041,6 +2041,8 @@ export type Query = {
   allSanitySharedSections: SanitySharedSectionsConnection;
   sanitySoldOutProjects: Maybe<SanitySoldOutProjects>;
   allSanitySoldOutProjects: SanitySoldOutProjectsConnection;
+  sanityStatCard: Maybe<SanityStatCard>;
+  allSanityStatCard: SanityStatCardConnection;
   sanityTag: Maybe<SanityTag>;
   allSanityTag: SanityTagConnection;
   sanityTeamPage: Maybe<SanityTeamPage>;
@@ -3039,6 +3041,7 @@ export type QuerySanityHomePageWebArgs = {
   marketplaceSection: Maybe<SanityMarketplaceSectionFilterInput>;
   homeWebPartnersSection: Maybe<SanityHomeWebPartnersSectionFilterInput>;
   homeWebEcologicalCreditCardsSection: Maybe<SanityHomeWebEcologicalCreditCardsSectionFilterInput>;
+  homeWebStatsSection: Maybe<SanityHomeWebStatsSectionFilterInput>;
   bannerTextSection: Maybe<SanityTitleImageCustomBodyFilterInput>;
   climateSection: Maybe<SanityClimateSectionFilterInput>;
   carbonPlusSection: Maybe<SanityCarbonPlusSectionFilterInput>;
@@ -3048,6 +3051,7 @@ export type QuerySanityHomePageWebArgs = {
   _rawMarketplaceSection: Maybe<JsonQueryOperatorInput>;
   _rawHomeWebPartnersSection: Maybe<JsonQueryOperatorInput>;
   _rawHomeWebEcologicalCreditCardsSection: Maybe<JsonQueryOperatorInput>;
+  _rawHomeWebStatsSection: Maybe<JsonQueryOperatorInput>;
   _rawBannerTextSection: Maybe<JsonQueryOperatorInput>;
   _rawClimateSection: Maybe<JsonQueryOperatorInput>;
   _rawCarbonPlusSection: Maybe<JsonQueryOperatorInput>;
@@ -3818,6 +3822,34 @@ export type QuerySanitySoldOutProjectsArgs = {
 export type QueryAllSanitySoldOutProjectsArgs = {
   filter: Maybe<SanitySoldOutProjectsFilterInput>;
   sort: Maybe<SanitySoldOutProjectsSortInput>;
+  skip: Maybe<Scalars['Int']>;
+  limit: Maybe<Scalars['Int']>;
+};
+
+
+export type QuerySanityStatCardArgs = {
+  _id: Maybe<StringQueryOperatorInput>;
+  _type: Maybe<StringQueryOperatorInput>;
+  _createdAt: Maybe<DateQueryOperatorInput>;
+  _updatedAt: Maybe<DateQueryOperatorInput>;
+  _rev: Maybe<StringQueryOperatorInput>;
+  _key: Maybe<StringQueryOperatorInput>;
+  label: Maybe<StringQueryOperatorInput>;
+  stat: Maybe<StringQueryOperatorInput>;
+  image: Maybe<SanityCustomImageFilterInput>;
+  description: Maybe<SanityBlockFilterListInput>;
+  _rawDescription: Maybe<JsonQueryOperatorInput>;
+  _rawImage: Maybe<JsonQueryOperatorInput>;
+  id: Maybe<StringQueryOperatorInput>;
+  parent: Maybe<NodeFilterInput>;
+  children: Maybe<NodeFilterListInput>;
+  internal: Maybe<InternalFilterInput>;
+};
+
+
+export type QueryAllSanityStatCardArgs = {
+  filter: Maybe<SanityStatCardFilterInput>;
+  sort: Maybe<SanityStatCardSortInput>;
   skip: Maybe<Scalars['Int']>;
   limit: Maybe<Scalars['Int']>;
 };
@@ -16781,6 +16813,7 @@ export type SanityHomePageWeb = SanityDocument & Node & {
   marketplaceSection: Maybe<SanityMarketplaceSection>;
   homeWebPartnersSection: Maybe<SanityHomeWebPartnersSection>;
   homeWebEcologicalCreditCardsSection: Maybe<SanityHomeWebEcologicalCreditCardsSection>;
+  homeWebStatsSection: Maybe<SanityHomeWebStatsSection>;
   bannerTextSection: Maybe<SanityTitleImageCustomBody>;
   climateSection: Maybe<SanityClimateSection>;
   carbonPlusSection: Maybe<SanityCarbonPlusSection>;
@@ -16790,6 +16823,7 @@ export type SanityHomePageWeb = SanityDocument & Node & {
   _rawMarketplaceSection: Maybe<Scalars['JSON']>;
   _rawHomeWebPartnersSection: Maybe<Scalars['JSON']>;
   _rawHomeWebEcologicalCreditCardsSection: Maybe<Scalars['JSON']>;
+  _rawHomeWebStatsSection: Maybe<Scalars['JSON']>;
   _rawBannerTextSection: Maybe<Scalars['JSON']>;
   _rawClimateSection: Maybe<Scalars['JSON']>;
   _rawCarbonPlusSection: Maybe<Scalars['JSON']>;
@@ -16833,6 +16867,11 @@ export type SanityHomePageWeb_RawHomeWebPartnersSectionArgs = {
 
 
 export type SanityHomePageWeb_RawHomeWebEcologicalCreditCardsSectionArgs = {
+  resolveReferences: Maybe<SanityResolveReferencesConfiguration>;
+};
+
+
+export type SanityHomePageWeb_RawHomeWebStatsSectionArgs = {
   resolveReferences: Maybe<SanityResolveReferencesConfiguration>;
 };
 
@@ -17046,6 +17085,48 @@ export enum SanityHomePageWebFieldsEnum {
   HomeWebEcologicalCreditCardsSectionCardsInternalOwner = 'homeWebEcologicalCreditCardsSection___cards___internal___owner',
   HomeWebEcologicalCreditCardsSectionCardsInternalType = 'homeWebEcologicalCreditCardsSection___cards___internal___type',
   HomeWebEcologicalCreditCardsSectionRawCards = 'homeWebEcologicalCreditCardsSection____rawCards',
+  HomeWebStatsSectionKey = 'homeWebStatsSection____key',
+  HomeWebStatsSectionType = 'homeWebStatsSection____type',
+  HomeWebStatsSectionLabel = 'homeWebStatsSection___label',
+  HomeWebStatsSectionTitle = 'homeWebStatsSection___title',
+  HomeWebStatsSectionCards = 'homeWebStatsSection___cards',
+  HomeWebStatsSectionCardsId = 'homeWebStatsSection___cards____id',
+  HomeWebStatsSectionCardsType = 'homeWebStatsSection___cards____type',
+  HomeWebStatsSectionCardsCreatedAt = 'homeWebStatsSection___cards____createdAt',
+  HomeWebStatsSectionCardsUpdatedAt = 'homeWebStatsSection___cards____updatedAt',
+  HomeWebStatsSectionCardsRev = 'homeWebStatsSection___cards____rev',
+  HomeWebStatsSectionCardsKey = 'homeWebStatsSection___cards____key',
+  HomeWebStatsSectionCardsLabel = 'homeWebStatsSection___cards___label',
+  HomeWebStatsSectionCardsStat = 'homeWebStatsSection___cards___stat',
+  HomeWebStatsSectionCardsImageKey = 'homeWebStatsSection___cards___image____key',
+  HomeWebStatsSectionCardsImageType = 'homeWebStatsSection___cards___image____type',
+  HomeWebStatsSectionCardsImageImageHref = 'homeWebStatsSection___cards___image___imageHref',
+  HomeWebStatsSectionCardsImageImageAlt = 'homeWebStatsSection___cards___image___imageAlt',
+  HomeWebStatsSectionCardsImageRawImage = 'homeWebStatsSection___cards___image____rawImage',
+  HomeWebStatsSectionCardsDescription = 'homeWebStatsSection___cards___description',
+  HomeWebStatsSectionCardsDescriptionKey = 'homeWebStatsSection___cards___description____key',
+  HomeWebStatsSectionCardsDescriptionType = 'homeWebStatsSection___cards___description____type',
+  HomeWebStatsSectionCardsDescriptionChildren = 'homeWebStatsSection___cards___description___children',
+  HomeWebStatsSectionCardsDescriptionStyle = 'homeWebStatsSection___cards___description___style',
+  HomeWebStatsSectionCardsDescriptionList = 'homeWebStatsSection___cards___description___list',
+  HomeWebStatsSectionCardsDescriptionRawChildren = 'homeWebStatsSection___cards___description____rawChildren',
+  HomeWebStatsSectionCardsRawDescription = 'homeWebStatsSection___cards____rawDescription',
+  HomeWebStatsSectionCardsRawImage = 'homeWebStatsSection___cards____rawImage',
+  HomeWebStatsSectionCardsId = 'homeWebStatsSection___cards___id',
+  HomeWebStatsSectionCardsParentId = 'homeWebStatsSection___cards___parent___id',
+  HomeWebStatsSectionCardsParentChildren = 'homeWebStatsSection___cards___parent___children',
+  HomeWebStatsSectionCardsChildren = 'homeWebStatsSection___cards___children',
+  HomeWebStatsSectionCardsChildrenId = 'homeWebStatsSection___cards___children___id',
+  HomeWebStatsSectionCardsChildrenChildren = 'homeWebStatsSection___cards___children___children',
+  HomeWebStatsSectionCardsInternalContent = 'homeWebStatsSection___cards___internal___content',
+  HomeWebStatsSectionCardsInternalContentDigest = 'homeWebStatsSection___cards___internal___contentDigest',
+  HomeWebStatsSectionCardsInternalDescription = 'homeWebStatsSection___cards___internal___description',
+  HomeWebStatsSectionCardsInternalFieldOwners = 'homeWebStatsSection___cards___internal___fieldOwners',
+  HomeWebStatsSectionCardsInternalIgnoreType = 'homeWebStatsSection___cards___internal___ignoreType',
+  HomeWebStatsSectionCardsInternalMediaType = 'homeWebStatsSection___cards___internal___mediaType',
+  HomeWebStatsSectionCardsInternalOwner = 'homeWebStatsSection___cards___internal___owner',
+  HomeWebStatsSectionCardsInternalType = 'homeWebStatsSection___cards___internal___type',
+  HomeWebStatsSectionRawCards = 'homeWebStatsSection____rawCards',
   BannerTextSectionKey = 'bannerTextSection____key',
   BannerTextSectionType = 'bannerTextSection____type',
   BannerTextSectionTitle = 'bannerTextSection___title',
@@ -17155,6 +17236,7 @@ export enum SanityHomePageWebFieldsEnum {
   RawMarketplaceSection = '_rawMarketplaceSection',
   RawHomeWebPartnersSection = '_rawHomeWebPartnersSection',
   RawHomeWebEcologicalCreditCardsSection = '_rawHomeWebEcologicalCreditCardsSection',
+  RawHomeWebStatsSection = '_rawHomeWebStatsSection',
   RawBannerTextSection = '_rawBannerTextSection',
   RawClimateSection = '_rawClimateSection',
   RawCarbonPlusSection = '_rawCarbonPlusSection',
@@ -17258,6 +17340,7 @@ export type SanityHomePageWebFilterInput = {
   marketplaceSection: Maybe<SanityMarketplaceSectionFilterInput>;
   homeWebPartnersSection: Maybe<SanityHomeWebPartnersSectionFilterInput>;
   homeWebEcologicalCreditCardsSection: Maybe<SanityHomeWebEcologicalCreditCardsSectionFilterInput>;
+  homeWebStatsSection: Maybe<SanityHomeWebStatsSectionFilterInput>;
   bannerTextSection: Maybe<SanityTitleImageCustomBodyFilterInput>;
   climateSection: Maybe<SanityClimateSectionFilterInput>;
   carbonPlusSection: Maybe<SanityCarbonPlusSectionFilterInput>;
@@ -17267,6 +17350,7 @@ export type SanityHomePageWebFilterInput = {
   _rawMarketplaceSection: Maybe<JsonQueryOperatorInput>;
   _rawHomeWebPartnersSection: Maybe<JsonQueryOperatorInput>;
   _rawHomeWebEcologicalCreditCardsSection: Maybe<JsonQueryOperatorInput>;
+  _rawHomeWebStatsSection: Maybe<JsonQueryOperatorInput>;
   _rawBannerTextSection: Maybe<JsonQueryOperatorInput>;
   _rawClimateSection: Maybe<JsonQueryOperatorInput>;
   _rawCarbonPlusSection: Maybe<JsonQueryOperatorInput>;
@@ -17356,6 +17440,30 @@ export type SanityHomeWebPartnersSectionFilterInput = {
   title: Maybe<StringQueryOperatorInput>;
   partners: Maybe<SanityPartnerFilterListInput>;
   _rawPartners: Maybe<JsonQueryOperatorInput>;
+};
+
+export type SanityHomeWebStatsSection = {
+  __typename?: 'SanityHomeWebStatsSection';
+  _key: Maybe<Scalars['String']>;
+  _type: Maybe<Scalars['String']>;
+  label: Maybe<Scalars['String']>;
+  title: Maybe<Scalars['String']>;
+  cards: Maybe<Array<Maybe<SanityStatCard>>>;
+  _rawCards: Maybe<Scalars['JSON']>;
+};
+
+
+export type SanityHomeWebStatsSection_RawCardsArgs = {
+  resolveReferences: Maybe<SanityResolveReferencesConfiguration>;
+};
+
+export type SanityHomeWebStatsSectionFilterInput = {
+  _key: Maybe<StringQueryOperatorInput>;
+  _type: Maybe<StringQueryOperatorInput>;
+  label: Maybe<StringQueryOperatorInput>;
+  title: Maybe<StringQueryOperatorInput>;
+  cards: Maybe<SanityStatCardFilterListInput>;
+  _rawCards: Maybe<JsonQueryOperatorInput>;
 };
 
 export type SanityImage = {
@@ -27278,6 +27386,274 @@ export type SanitySpanFilterListInput = {
   elemMatch: Maybe<SanitySpanFilterInput>;
 };
 
+export type SanityStatCard = SanityDocument & Node & {
+  __typename?: 'SanityStatCard';
+  _id: Maybe<Scalars['String']>;
+  _type: Maybe<Scalars['String']>;
+  _createdAt: Maybe<Scalars['Date']>;
+  _updatedAt: Maybe<Scalars['Date']>;
+  _rev: Maybe<Scalars['String']>;
+  _key: Maybe<Scalars['String']>;
+  label: Maybe<Scalars['String']>;
+  stat: Maybe<Scalars['String']>;
+  image: Maybe<SanityCustomImage>;
+  description: Maybe<Array<Maybe<SanityBlock>>>;
+  _rawDescription: Maybe<Scalars['JSON']>;
+  _rawImage: Maybe<Scalars['JSON']>;
+  id: Scalars['ID'];
+  parent: Maybe<Node>;
+  children: Array<Node>;
+  internal: Internal;
+};
+
+
+export type SanityStatCard_CreatedAtArgs = {
+  formatString: Maybe<Scalars['String']>;
+  fromNow: Maybe<Scalars['Boolean']>;
+  difference: Maybe<Scalars['String']>;
+  locale: Maybe<Scalars['String']>;
+};
+
+
+export type SanityStatCard_UpdatedAtArgs = {
+  formatString: Maybe<Scalars['String']>;
+  fromNow: Maybe<Scalars['Boolean']>;
+  difference: Maybe<Scalars['String']>;
+  locale: Maybe<Scalars['String']>;
+};
+
+
+export type SanityStatCard_RawDescriptionArgs = {
+  resolveReferences: Maybe<SanityResolveReferencesConfiguration>;
+};
+
+
+export type SanityStatCard_RawImageArgs = {
+  resolveReferences: Maybe<SanityResolveReferencesConfiguration>;
+};
+
+export type SanityStatCardConnection = {
+  __typename?: 'SanityStatCardConnection';
+  totalCount: Scalars['Int'];
+  edges: Array<SanityStatCardEdge>;
+  nodes: Array<SanityStatCard>;
+  pageInfo: PageInfo;
+  distinct: Array<Scalars['String']>;
+  group: Array<SanityStatCardGroupConnection>;
+};
+
+
+export type SanityStatCardConnectionDistinctArgs = {
+  field: SanityStatCardFieldsEnum;
+};
+
+
+export type SanityStatCardConnectionGroupArgs = {
+  skip: Maybe<Scalars['Int']>;
+  limit: Maybe<Scalars['Int']>;
+  field: SanityStatCardFieldsEnum;
+};
+
+export type SanityStatCardEdge = {
+  __typename?: 'SanityStatCardEdge';
+  next: Maybe<SanityStatCard>;
+  node: SanityStatCard;
+  previous: Maybe<SanityStatCard>;
+};
+
+export enum SanityStatCardFieldsEnum {
+  Id = '_id',
+  Type = '_type',
+  CreatedAt = '_createdAt',
+  UpdatedAt = '_updatedAt',
+  Rev = '_rev',
+  Key = '_key',
+  Label = 'label',
+  Stat = 'stat',
+  ImageKey = 'image____key',
+  ImageType = 'image____type',
+  ImageImageHref = 'image___imageHref',
+  ImageImageKey = 'image___image____key',
+  ImageImageType = 'image___image____type',
+  ImageImageAssetId = 'image___image___asset____id',
+  ImageImageAssetType = 'image___image___asset____type',
+  ImageImageAssetCreatedAt = 'image___image___asset____createdAt',
+  ImageImageAssetUpdatedAt = 'image___image___asset____updatedAt',
+  ImageImageAssetRev = 'image___image___asset____rev',
+  ImageImageAssetKey = 'image___image___asset____key',
+  ImageImageAssetOriginalFilename = 'image___image___asset___originalFilename',
+  ImageImageAssetLabel = 'image___image___asset___label',
+  ImageImageAssetTitle = 'image___image___asset___title',
+  ImageImageAssetDescription = 'image___image___asset___description',
+  ImageImageAssetAltText = 'image___image___asset___altText',
+  ImageImageAssetSha1hash = 'image___image___asset___sha1hash',
+  ImageImageAssetExtension = 'image___image___asset___extension',
+  ImageImageAssetMimeType = 'image___image___asset___mimeType',
+  ImageImageAssetSize = 'image___image___asset___size',
+  ImageImageAssetAssetId = 'image___image___asset___assetId',
+  ImageImageAssetUploadId = 'image___image___asset___uploadId',
+  ImageImageAssetPath = 'image___image___asset___path',
+  ImageImageAssetUrl = 'image___image___asset___url',
+  ImageImageAssetRawMetadata = 'image___image___asset____rawMetadata',
+  ImageImageAssetRawSource = 'image___image___asset____rawSource',
+  ImageImageAssetId = 'image___image___asset___id',
+  ImageImageAssetChildren = 'image___image___asset___children',
+  ImageImageHotspotKey = 'image___image___hotspot____key',
+  ImageImageHotspotType = 'image___image___hotspot____type',
+  ImageImageHotspotX = 'image___image___hotspot___x',
+  ImageImageHotspotY = 'image___image___hotspot___y',
+  ImageImageHotspotHeight = 'image___image___hotspot___height',
+  ImageImageHotspotWidth = 'image___image___hotspot___width',
+  ImageImageCropKey = 'image___image___crop____key',
+  ImageImageCropType = 'image___image___crop____type',
+  ImageImageCropTop = 'image___image___crop___top',
+  ImageImageCropBottom = 'image___image___crop___bottom',
+  ImageImageCropLeft = 'image___image___crop___left',
+  ImageImageCropRight = 'image___image___crop___right',
+  ImageImageRawAsset = 'image___image____rawAsset',
+  ImageImageRawHotspot = 'image___image____rawHotspot',
+  ImageImageRawCrop = 'image___image____rawCrop',
+  ImageImageAlt = 'image___imageAlt',
+  ImageRawImage = 'image____rawImage',
+  Description = 'description',
+  DescriptionKey = 'description____key',
+  DescriptionType = 'description____type',
+  DescriptionChildren = 'description___children',
+  DescriptionChildrenKey = 'description___children____key',
+  DescriptionChildrenType = 'description___children____type',
+  DescriptionChildrenMarks = 'description___children___marks',
+  DescriptionChildrenText = 'description___children___text',
+  DescriptionStyle = 'description___style',
+  DescriptionList = 'description___list',
+  DescriptionRawChildren = 'description____rawChildren',
+  RawDescription = '_rawDescription',
+  RawImage = '_rawImage',
+  Id = 'id',
+  ParentId = 'parent___id',
+  ParentParentId = 'parent___parent___id',
+  ParentParentParentId = 'parent___parent___parent___id',
+  ParentParentParentChildren = 'parent___parent___parent___children',
+  ParentParentChildren = 'parent___parent___children',
+  ParentParentChildrenId = 'parent___parent___children___id',
+  ParentParentChildrenChildren = 'parent___parent___children___children',
+  ParentParentInternalContent = 'parent___parent___internal___content',
+  ParentParentInternalContentDigest = 'parent___parent___internal___contentDigest',
+  ParentParentInternalDescription = 'parent___parent___internal___description',
+  ParentParentInternalFieldOwners = 'parent___parent___internal___fieldOwners',
+  ParentParentInternalIgnoreType = 'parent___parent___internal___ignoreType',
+  ParentParentInternalMediaType = 'parent___parent___internal___mediaType',
+  ParentParentInternalOwner = 'parent___parent___internal___owner',
+  ParentParentInternalType = 'parent___parent___internal___type',
+  ParentChildren = 'parent___children',
+  ParentChildrenId = 'parent___children___id',
+  ParentChildrenParentId = 'parent___children___parent___id',
+  ParentChildrenParentChildren = 'parent___children___parent___children',
+  ParentChildrenChildren = 'parent___children___children',
+  ParentChildrenChildrenId = 'parent___children___children___id',
+  ParentChildrenChildrenChildren = 'parent___children___children___children',
+  ParentChildrenInternalContent = 'parent___children___internal___content',
+  ParentChildrenInternalContentDigest = 'parent___children___internal___contentDigest',
+  ParentChildrenInternalDescription = 'parent___children___internal___description',
+  ParentChildrenInternalFieldOwners = 'parent___children___internal___fieldOwners',
+  ParentChildrenInternalIgnoreType = 'parent___children___internal___ignoreType',
+  ParentChildrenInternalMediaType = 'parent___children___internal___mediaType',
+  ParentChildrenInternalOwner = 'parent___children___internal___owner',
+  ParentChildrenInternalType = 'parent___children___internal___type',
+  ParentInternalContent = 'parent___internal___content',
+  ParentInternalContentDigest = 'parent___internal___contentDigest',
+  ParentInternalDescription = 'parent___internal___description',
+  ParentInternalFieldOwners = 'parent___internal___fieldOwners',
+  ParentInternalIgnoreType = 'parent___internal___ignoreType',
+  ParentInternalMediaType = 'parent___internal___mediaType',
+  ParentInternalOwner = 'parent___internal___owner',
+  ParentInternalType = 'parent___internal___type',
+  Children = 'children',
+  ChildrenId = 'children___id',
+  ChildrenParentId = 'children___parent___id',
+  ChildrenParentParentId = 'children___parent___parent___id',
+  ChildrenParentParentChildren = 'children___parent___parent___children',
+  ChildrenParentChildren = 'children___parent___children',
+  ChildrenParentChildrenId = 'children___parent___children___id',
+  ChildrenParentChildrenChildren = 'children___parent___children___children',
+  ChildrenParentInternalContent = 'children___parent___internal___content',
+  ChildrenParentInternalContentDigest = 'children___parent___internal___contentDigest',
+  ChildrenParentInternalDescription = 'children___parent___internal___description',
+  ChildrenParentInternalFieldOwners = 'children___parent___internal___fieldOwners',
+  ChildrenParentInternalIgnoreType = 'children___parent___internal___ignoreType',
+  ChildrenParentInternalMediaType = 'children___parent___internal___mediaType',
+  ChildrenParentInternalOwner = 'children___parent___internal___owner',
+  ChildrenParentInternalType = 'children___parent___internal___type',
+  ChildrenChildren = 'children___children',
+  ChildrenChildrenId = 'children___children___id',
+  ChildrenChildrenParentId = 'children___children___parent___id',
+  ChildrenChildrenParentChildren = 'children___children___parent___children',
+  ChildrenChildrenChildren = 'children___children___children',
+  ChildrenChildrenChildrenId = 'children___children___children___id',
+  ChildrenChildrenChildrenChildren = 'children___children___children___children',
+  ChildrenChildrenInternalContent = 'children___children___internal___content',
+  ChildrenChildrenInternalContentDigest = 'children___children___internal___contentDigest',
+  ChildrenChildrenInternalDescription = 'children___children___internal___description',
+  ChildrenChildrenInternalFieldOwners = 'children___children___internal___fieldOwners',
+  ChildrenChildrenInternalIgnoreType = 'children___children___internal___ignoreType',
+  ChildrenChildrenInternalMediaType = 'children___children___internal___mediaType',
+  ChildrenChildrenInternalOwner = 'children___children___internal___owner',
+  ChildrenChildrenInternalType = 'children___children___internal___type',
+  ChildrenInternalContent = 'children___internal___content',
+  ChildrenInternalContentDigest = 'children___internal___contentDigest',
+  ChildrenInternalDescription = 'children___internal___description',
+  ChildrenInternalFieldOwners = 'children___internal___fieldOwners',
+  ChildrenInternalIgnoreType = 'children___internal___ignoreType',
+  ChildrenInternalMediaType = 'children___internal___mediaType',
+  ChildrenInternalOwner = 'children___internal___owner',
+  ChildrenInternalType = 'children___internal___type',
+  InternalContent = 'internal___content',
+  InternalContentDigest = 'internal___contentDigest',
+  InternalDescription = 'internal___description',
+  InternalFieldOwners = 'internal___fieldOwners',
+  InternalIgnoreType = 'internal___ignoreType',
+  InternalMediaType = 'internal___mediaType',
+  InternalOwner = 'internal___owner',
+  InternalType = 'internal___type'
+}
+
+export type SanityStatCardFilterInput = {
+  _id: Maybe<StringQueryOperatorInput>;
+  _type: Maybe<StringQueryOperatorInput>;
+  _createdAt: Maybe<DateQueryOperatorInput>;
+  _updatedAt: Maybe<DateQueryOperatorInput>;
+  _rev: Maybe<StringQueryOperatorInput>;
+  _key: Maybe<StringQueryOperatorInput>;
+  label: Maybe<StringQueryOperatorInput>;
+  stat: Maybe<StringQueryOperatorInput>;
+  image: Maybe<SanityCustomImageFilterInput>;
+  description: Maybe<SanityBlockFilterListInput>;
+  _rawDescription: Maybe<JsonQueryOperatorInput>;
+  _rawImage: Maybe<JsonQueryOperatorInput>;
+  id: Maybe<StringQueryOperatorInput>;
+  parent: Maybe<NodeFilterInput>;
+  children: Maybe<NodeFilterListInput>;
+  internal: Maybe<InternalFilterInput>;
+};
+
+export type SanityStatCardFilterListInput = {
+  elemMatch: Maybe<SanityStatCardFilterInput>;
+};
+
+export type SanityStatCardGroupConnection = {
+  __typename?: 'SanityStatCardGroupConnection';
+  totalCount: Scalars['Int'];
+  edges: Array<SanityStatCardEdge>;
+  nodes: Array<SanityStatCard>;
+  pageInfo: PageInfo;
+  field: Scalars['String'];
+  fieldValue: Maybe<Scalars['String']>;
+};
+
+export type SanityStatCardSortInput = {
+  fields: Maybe<Array<Maybe<SanityStatCardFieldsEnum>>>;
+  order: Maybe<Array<Maybe<SortOrderEnum>>>;
+};
+
 export type SanityStepCard = {
   __typename?: 'SanityStepCard';
   _key: Maybe<Scalars['String']>;
@@ -31827,6 +32203,35 @@ export type HomePartnersSectionQuery = (
           & { asset: Maybe<(
             { __typename?: 'SanityImageAsset' }
             & Pick<SanityImageAsset, 'url'>
+          )> }
+        )> }
+      )>>> }
+    )> }
+  )> }
+);
+
+export type HomeStatsSectionQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+export type HomeStatsSectionQuery = (
+  { __typename?: 'Query' }
+  & { sanityHomePageWeb: Maybe<(
+    { __typename?: 'SanityHomePageWeb' }
+    & { homeWebStatsSection: Maybe<(
+      { __typename?: 'SanityHomeWebStatsSection' }
+      & Pick<SanityHomeWebStatsSection, 'label' | 'title'>
+      & { cards: Maybe<Array<Maybe<(
+        { __typename?: 'SanityStatCard' }
+        & Pick<SanityStatCard, 'label' | 'stat' | '_rawDescription'>
+        & { image: Maybe<(
+          { __typename?: 'SanityCustomImage' }
+          & Pick<SanityCustomImage, 'imageHref' | 'imageAlt'>
+          & { image: Maybe<(
+            { __typename?: 'SanityImage' }
+            & { asset: Maybe<(
+              { __typename?: 'SanityImageAsset' }
+              & Pick<SanityImageAsset, 'url'>
+            )> }
           )> }
         )> }
       )>>> }
