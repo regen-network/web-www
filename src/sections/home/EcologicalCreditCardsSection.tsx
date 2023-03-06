@@ -91,6 +91,7 @@ const EcologicalCreditCardsSection: React.FC = () => {
         slidesToShow={1}
         adaptiveHeight
         dots
+        itemWidth="100%"
       />
     </Section>
   );

@@ -12,6 +12,8 @@ import BackgroundImage from 'gatsby-background-image';
 import Img from 'gatsby-image';
 
 import { HomeLedgerSectionQuery } from '../../generated/graphql';
+import { homeStyles } from './Home.styles';
+import { Box } from '@mui/material';
 
 let useStyles = makeStyles((theme: Theme) => ({
   grid: {
@@ -48,9 +50,6 @@ let useStyles = makeStyles((theme: Theme) => ({
       paddingRight: theme.spacing(4),
       width: '100%',
     },
-  },
-  green: {
-    color: theme.palette.secondary.main,
   },
   text: {
     [theme.breakpoints.down(theme.breakpoints.values.tablet)]: {
@@ -106,8 +105,13 @@ const HomeLedger: React.FC = () => {
         </Grid>
         <Grid item xs={12} className={styles.text}>
           <Title align="left" variant="h1" className={styles.title}>
-            <span className={styles.green}>Regen Ledger</span> powers{' '}
-            <span className={styles.green}>Regen Marketplace</span>
+            <Box component="span" sx={homeStyles.greenGradient}>
+              Regen Ledger
+            </Box>{' '}
+            powers{' '}
+            <Box component="span" sx={homeStyles.greenGradient}>
+              Regen Marketplace
+            </Box>
           </Title>
           <Body size="xl" mobileSize="md" sx={{ pb: [6, 8.5], pt: [3, 5] }}>
             {content?.ledgerDescription}

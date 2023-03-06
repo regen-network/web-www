@@ -17,6 +17,7 @@ import type { FluidObject } from 'gatsby-image';
 import SanityImage from 'gatsby-plugin-sanity-image';
 
 import type { HomeMarketPlaceSectionQuery } from '../../generated/graphql';
+import { homeStyles } from './Home.styles';
 
 const useStyles = makeStyles((theme: Theme) => ({
   root: {
@@ -117,7 +118,7 @@ const MarketplaceSection: React.FC = () => {
             {data?.header}
           </Label>
           <Title variant="h2" align="center">
-            <Box component="span" sx={{ color: 'secondary.main' }}>
+            <Box component="span" sx={homeStyles.greenGradient}>
               {data?.body?.green}{' '}
             </Box>
             {data?.body?.middle}{' '}

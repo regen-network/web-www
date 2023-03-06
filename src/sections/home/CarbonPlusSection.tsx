@@ -50,6 +50,7 @@ const useStyles = makeStyles((theme: Theme) => ({
     fontSize: theme.spacing(4.5),
     height: theme.spacing(12.5),
     [theme.breakpoints.down(theme.breakpoints.values.tablet)]: {
+      fontSize: theme.spacing(3.5),
       width: '50%',
     },
   },
@@ -98,7 +99,7 @@ const CarbonplusSection: React.FC = (): JSX.Element => {
             <Box component="span" sx={{ color: 'info.main' }}>
               {content?.smallHeaderFeatured}{' '}
             </Box>
-            <Box component="span" sx={{ color: 'secondary.main' }}>
+            <Box component="span" sx={{ color: 'info.main' }}>
               {ReactHtmlParser(content?.smallHeaderCreditName || '')}
             </Box>
           </Label>
