@@ -51,7 +51,6 @@ const useStyles = makeStyles((theme: Theme) => ({
     height: theme.spacing(12.5),
     [theme.breakpoints.down(theme.breakpoints.values.tablet)]: {
       fontSize: theme.spacing(3.5),
-      width: '50%',
     },
   },
   grid: {
@@ -111,6 +110,7 @@ const CarbonplusSection: React.FC = (): JSX.Element => {
             size="large"
             className={styles.button}
             href={content?.linkUrl || ''}
+            sx={{ width: 'fit-content' }}
           >
             {content?.linkText}
           </ContainedButton>

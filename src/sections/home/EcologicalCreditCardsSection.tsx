@@ -2,6 +2,7 @@ import Section from '@regen-network/web-components/lib/components/organisms/Sect
 import EcologicalCreditCard from '@regen-network/web-components/lib/components/molecules/EcologicalCreditCard';
 import ResponsiveSlider from '@regen-network/web-components/lib/components/sliders/ResponsiveSlider';
 import { graphql, useStaticQuery } from 'gatsby';
+import { DefaultTheme as Theme, makeStyles, useTheme } from '@mui/styles';
 import React from 'react';
 import {
   HomeWebEcologicalCreditCardsSectionQuery,
@@ -68,15 +69,36 @@ const query = graphql`
   }
 `;
 
+const useStyles = makeStyles<Theme>((theme: Theme) => ({
+  root: {
+    paddingTop: 0,
+  },
+  slider: {
+    '& .slick-track': {
+      '& .slick-slide': {
+        margin: '0 0',
+      },
+    },
+  },
+}));
+
 const EcologicalCreditCardsSection: React.FC = () => {
   const { sanityHomePageWeb } =
     useStaticQuery<HomeWebEcologicalCreditCardsSectionQuery>(query);
   const content: SanityHomeWebEcologicalCreditCardsSection | undefined =
     sanityHomePageWeb?.homeWebEcologicalCreditCardsSection as any;
   const cards = normalizeEcologicalCreditCards({ content });
+  const classes = useStyles();
 
   return (
-    <Section title={content?.title ?? ''}>
+    <Section
+      title={content?.title ?? ''}
+      sx={{
+        section: { pt: { xs: 0, lg: 0 } },
+        title: { mb: 10 },
+        children: { mt: { xs: 0, sm: 0 } },
+      }}
+    >
       <ResponsiveSlider
         items={cards.map(card => (
           <EcologicalCreditCard
@@ -92,6 +114,7 @@ const EcologicalCreditCardsSection: React.FC = () => {
         adaptiveHeight
         dots
         itemWidth="100%"
+        classes={classes}
       />
     </Section>
   );

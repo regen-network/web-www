@@ -15,6 +15,7 @@ import { graphql, useStaticQuery } from 'gatsby';
 import SanityImage from 'gatsby-plugin-sanity-image';
 
 import { HomeClimateSectionQuery } from '../../generated/graphql';
+import { homeStyles } from './Home.styles';
 
 const useStyles = makeStyles((theme: Theme) => ({
   root: {
@@ -166,6 +167,11 @@ const ClimateSection: React.FC = (): JSX.Element => {
   const downMd = useMediaQuery(theme.breakpoints.down('md'));
   const data = useStaticQuery<HomeClimateSectionQuery>(query);
   const content = data.sanityHomePageWeb?.climateSection;
+  const descriptionGradient = content?.description
+    ?.split(' ')
+    .slice(0, 2)
+    .join(' ');
+  const descriptionNormal = content?.description?.split(' ').slice(2).join(' ');
 
   return (
     <Box
@@ -210,12 +216,19 @@ const ClimateSection: React.FC = (): JSX.Element => {
         <Title
           variant="h1"
           mobileVariant="h4"
-          sx={{ color: 'black', pb: { xs: 3, md: 4 } }}
+          sx={{ color: 'black', pb: { xs: 3, md: 4 }, maxWidth: 747 }}
         >
           {content?.header}
         </Title>
-        <Title variant="h3" mobileVariant="h5" sx={{ color: 'info.main' }}>
-          {ReactHtmlParser(content?.description || '')}
+        <Title
+          variant="h3"
+          mobileVariant="h5"
+          sx={{ color: 'info.main', maxWidth: 727 }}
+        >
+          <Box component="span" sx={homeStyles.greenGradient}>
+            {`${descriptionGradient} `}
+          </Box>
+          {descriptionNormal}
         </Title>
       </div>
     </Box>

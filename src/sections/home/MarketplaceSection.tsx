@@ -76,13 +76,6 @@ const useStyles = makeStyles((theme: Theme) => ({
 
 const query = graphql`
   query homeMarketPlaceSection {
-    bg: file(relativePath: { eq: "topo-bg-top.png" }) {
-      childImageSharp {
-        fluid(quality: 90, maxWidth: 1920) {
-          ...GatsbyImageSharpFluid_withWebp
-        }
-      }
-    }
     sanityHomePageWeb {
       marketplaceSection {
         header
@@ -103,67 +96,62 @@ const query = graphql`
 
 const MarketplaceSection: React.FC = () => {
   const styles = useStyles({});
-  const { sanityHomePageWeb, bg } =
+  const { sanityHomePageWeb } =
     useStaticQuery<HomeMarketPlaceSectionQuery>(query);
   const data = sanityHomePageWeb?.marketplaceSection;
 
   return (
-    <BackgroundImage
-      fluid={bg?.childImageSharp?.fluid as FluidObject}
-      style={{ zIndex: 2 }}
-    >
-      <Section className={styles.root}>
-        <div className={styles.inner}>
-          <Label size="lg" sx={{ color: 'info.main', mb: 5 }}>
-            {data?.header}
-          </Label>
-          <Title variant="h2" align="center">
-            <Box component="span" sx={homeStyles.greenGradient}>
-              {data?.body?.green}{' '}
-            </Box>
-            {data?.body?.middle}{' '}
-            <Tooltip arrow placement="top" title={data?.tooltip || ''}>
-              <span className={styles.popover}>{data?.body?.popover}</span>
-            </Tooltip>{' '}
-            {data?.body?.end}
-          </Title>
-          <Grid container spacing={3}>
-            {data?.callToActions?.map((cta, i) => {
-              return !cta ? null : (
-                <Grid key={cta.header || i} className={styles.gridItem} item xs>
-                  <SanityImage
-                    {...(cta.image as any)}
-                    alt={cta.caption}
-                    width={159}
-                    style={{ width: '159px' }}
-                  />
-                  <Label size="md" sx={{ pt: 4 }}>
-                    {cta.caption}
-                  </Label>
-                  <Title
-                    variant="h3"
-                    mobileVariant="h5"
-                    sx={{ textAlign: 'center', my: 3 }}
-                  >
-                    {cta.header}
-                  </Title>
-                  <Body size="xl" mobileSize="md">
-                    {cta.description}
-                  </Body>
-                  <ContainedButton
-                    size="large"
-                    href={cta.linkUrl || ''}
-                    sx={{ mt: [4, 7] }}
-                  >
-                    {cta.linkText}
-                  </ContainedButton>
-                </Grid>
-              );
-            })}
-          </Grid>
-        </div>
-      </Section>
-    </BackgroundImage>
+    <Section className={styles.root}>
+      <div className={styles.inner}>
+        <Label size="lg" sx={{ color: 'info.main', mb: 5 }}>
+          {data?.header}
+        </Label>
+        <Title variant="h2" align="center">
+          <Box component="span" sx={homeStyles.greenGradient}>
+            {data?.body?.green}{' '}
+          </Box>
+          {data?.body?.middle}{' '}
+          <Tooltip arrow placement="top" title={data?.tooltip || ''}>
+            <span className={styles.popover}>{data?.body?.popover}</span>
+          </Tooltip>{' '}
+          {data?.body?.end}
+        </Title>
+        <Grid container spacing={3}>
+          {data?.callToActions?.map((cta, i) => {
+            return !cta ? null : (
+              <Grid key={cta.header || i} className={styles.gridItem} item xs>
+                <SanityImage
+                  {...(cta.image as any)}
+                  alt={cta.caption}
+                  width={159}
+                  style={{ width: '159px' }}
+                />
+                <Label size="md" sx={{ pt: 4 }}>
+                  {cta.caption}
+                </Label>
+                <Title
+                  variant="h3"
+                  mobileVariant="h5"
+                  sx={{ textAlign: 'center', my: 3 }}
+                >
+                  {cta.header}
+                </Title>
+                <Body size="xl" mobileSize="md">
+                  {cta.description}
+                </Body>
+                <ContainedButton
+                  size="large"
+                  href={cta.linkUrl || ''}
+                  sx={{ mt: [4, 7] }}
+                >
+                  {cta.linkText}
+                </ContainedButton>
+              </Grid>
+            );
+          })}
+        </Grid>
+      </div>
+    </Section>
   );
 };
 
