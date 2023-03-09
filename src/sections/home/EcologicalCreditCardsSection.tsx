@@ -94,7 +94,7 @@ const EcologicalCreditCardsSection: React.FC = () => {
     <Section
       title={content?.title ?? ''}
       sx={{
-        section: { pt: { xs: 0, lg: 0 } },
+        section: { py: { xs: 0, lg: 0 } },
         title: { mb: 10 },
         children: { mt: { xs: 0, sm: 0 } },
       }}

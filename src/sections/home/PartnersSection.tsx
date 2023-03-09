@@ -27,7 +27,10 @@ const PartnersSection: React.FC = () => {
   const content = sanityHomePageWeb?.homeWebPartnersSection;
 
   return (
-    <CarouselSection title={content?.title ?? ''} sx={{ px: { xs: 0, lg: 0 } }}>
+    <CarouselSection
+      title={content?.title ?? ''}
+      sx={{ px: { xs: 0, lg: 0 }, pt: { xs: 0, lg: 0 } }}
+    >
       {content?.partners?.map(partner => (
         <Box key={partner?.name}>
           <img

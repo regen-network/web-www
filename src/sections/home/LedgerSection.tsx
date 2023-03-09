@@ -18,12 +18,10 @@ import { Box } from '@mui/material';
 let useStyles = makeStyles((theme: Theme) => ({
   grid: {
     [theme.breakpoints.down(theme.breakpoints.values.tablet)]: {
-      paddingTop: theme.spacing(20),
       paddingBottom: theme.spacing(51.25),
       flexDirection: 'column',
     },
     [theme.breakpoints.up(theme.breakpoints.values.tablet)]: {
-      paddingTop: theme.spacing(24.25),
       paddingRight: theme.spacing(30.25),
       paddingBottom: theme.spacing(39.5),
     },
@@ -105,11 +103,21 @@ const HomeLedger: React.FC = () => {
         </Grid>
         <Grid item xs={12} className={styles.text}>
           <Title align="left" variant="h1" className={styles.title}>
-            <Box component="span" sx={homeStyles.greenGradient}>
+            <Box
+              href="https://docs.regen.network/"
+              target="_blank"
+              component="a"
+              sx={homeStyles.greenGradient}
+            >
               Regen Ledger
             </Box>{' '}
             powers{' '}
-            <Box component="span" sx={homeStyles.greenGradient}>
+            <Box
+              href="https://app.regen.network/"
+              target="_blank"
+              component="a"
+              sx={homeStyles.greenGradient}
+            >
               Regen Marketplace
             </Box>
           </Title>

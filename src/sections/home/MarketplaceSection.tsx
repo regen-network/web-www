@@ -18,6 +18,7 @@ import SanityImage from 'gatsby-plugin-sanity-image';
 
 import type { HomeMarketPlaceSectionQuery } from '../../generated/graphql';
 import { homeStyles } from './Home.styles';
+import { Link } from '@reach/router';
 
 const useStyles = makeStyles((theme: Theme) => ({
   root: {
@@ -107,7 +108,12 @@ const MarketplaceSection: React.FC = () => {
           {data?.header}
         </Label>
         <Title variant="h2" align="center">
-          <Box component="span" sx={homeStyles.greenGradient}>
+          <Box
+            href="https://app.regen.network/"
+            target="_blank"
+            component="a"
+            sx={homeStyles.greenGradient}
+          >
             {data?.body?.green}{' '}
           </Box>
           {data?.body?.middle}{' '}
