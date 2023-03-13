@@ -9,7 +9,7 @@
     "@mui/material": "^5.1.0",
     "@mui/styles": "^5.1.0",
     "@reach/router": "^1.1.1",
-    "@regen-network/web-components": "0.2.2",
+    "@regen-network/web-components": "0.2.10",
     "@sanity/image-url": "^1.0.1",
     "axios": "^0.21.1",
     "clean-css": "^5.3.1",
@@ -50,6 +50,12 @@
     "typescript": "^4.4.4"
   },
   "devDependencies": {
+    "@graphql-codegen/cli": "1.21.4",
+    "@graphql-codegen/introspection": "1.18.2",
+    "@graphql-codegen/typescript": "1.22.0",
+    "@graphql-codegen/typescript-graphql-files-modules": "1.18.1",
+    "@graphql-codegen/typescript-operations": "^1.18.0",
+    "@graphql-codegen/typescript-react-apollo": "2.2.4",
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-simple-import-sort": "^7.0.0",
     "prettier": "2.4.1"

@@ -13,6 +13,9 @@ import HomeLedger from '../sections/home/LedgerSection';
 import MarketplaceSection from '../sections/home/MarketplaceSection';
 import HomeValuesSection from '../sections/home/ValuesSection';
 import BlogSection from '../sections/shared/BlogSection';
+import PartnersSection from '../sections/home/PartnersSection';
+import EcologicalCreditCardsSection from '../sections/home/EcologicalCreditCardsSection';
+import StatsSection from '../sections/home/StatsSection';
 
 const query = graphql`
   query homePageWeb {
@@ -71,8 +74,11 @@ const IndexPage: React.FC<PageProps> = ({ location }) => {
           <ClimateSection />
         </BackgroundImage>
       </Box>
-      <HomeValuesSection />
       <MarketplaceSection />
+      <PartnersSection />
+      <EcologicalCreditCardsSection />
+      <StatsSection />
+      <HomeValuesSection />
       <HomeLedger />
       <BlogSection />
     </>

@@ -11,6 +11,7 @@ import { HomeValuesSectionQuery } from '../../generated/graphql';
 
 const useStyles = makeStyles((theme: Theme) => ({
   root: {
+    paddingTop: 0,
     [theme.breakpoints.down('sm')]: {
       paddingBottom: theme.spacing(14),
     },
@@ -29,7 +30,7 @@ const useStyles = makeStyles((theme: Theme) => ({
       marginBottom: theme.spacing(9),
     },
     [theme.breakpoints.down('sm')]: {
-      marginBottom: theme.spacing(6.25),
+      marginBottom: theme.spacing(10),
     },
   },
 }));

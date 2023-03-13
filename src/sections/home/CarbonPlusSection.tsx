@@ -22,7 +22,7 @@ const useStyles = makeStyles((theme: Theme) => ({
       paddingBottom: theme.spacing(10),
     },
     [theme.breakpoints.up(theme.breakpoints.values.tablet)]: {
-      paddingTop: theme.spacing(30),
+      paddingTop: theme.spacing(15),
       paddingBottom: theme.spacing(20),
       paddingLeft: theme.spacing(37.5),
     },
@@ -50,7 +50,7 @@ const useStyles = makeStyles((theme: Theme) => ({
     fontSize: theme.spacing(4.5),
     height: theme.spacing(12.5),
     [theme.breakpoints.down(theme.breakpoints.values.tablet)]: {
-      width: '50%',
+      fontSize: theme.spacing(3.5),
     },
   },
   grid: {
@@ -98,7 +98,7 @@ const CarbonplusSection: React.FC = (): JSX.Element => {
             <Box component="span" sx={{ color: 'info.main' }}>
               {content?.smallHeaderFeatured}{' '}
             </Box>
-            <Box component="span" sx={{ color: 'secondary.main' }}>
+            <Box component="span" sx={{ color: 'info.main' }}>
               {ReactHtmlParser(content?.smallHeaderCreditName || '')}
             </Box>
           </Label>
@@ -110,6 +110,7 @@ const CarbonplusSection: React.FC = (): JSX.Element => {
             size="large"
             className={styles.button}
             href={content?.linkUrl || ''}
+            sx={{ width: 'fit-content' }}
           >
             {content?.linkText}
           </ContainedButton>
