@@ -226,7 +226,7 @@ const ClimateSection: React.FC = (): JSX.Element => {
           sx={{ color: 'info.main', maxWidth: 727 }}
         >
           <Box
-            href="https://library.regen.network/v/regen-registry-program-guide/"
+            href="https://regennetwork.notion.site/Welcome-to-Regen-Registry-0d55aab2a2d64f27aee2a468df172990"
             target="_blank"
             component="a"
             sx={homeStyles.greenGradient}
