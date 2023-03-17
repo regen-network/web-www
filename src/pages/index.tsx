@@ -44,7 +44,7 @@ const IndexPage: React.FC<PageProps> = ({ location }) => {
   const data = useStaticQuery<HomePageWebQuery>(query);
 
   return (
-    <>
+    <Box sx={{ overflowX: 'hidden' }}>
       <SEO
         location={location}
         title="Regen Network"
@@ -81,7 +81,7 @@ const IndexPage: React.FC<PageProps> = ({ location }) => {
       <HomeValuesSection />
       <HomeLedger />
       <BlogSection />
-    </>
+    </Box>
   );
 };
 
