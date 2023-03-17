@@ -17,9 +17,6 @@ const useStyles = makeStyles((theme: Theme) => ({
     textAlign: 'center',
     color: theme.palette.primary.main,
     width: '100%',
-    backgroundPosition: 'bottom center',
-    backgroundRepeat: 'repeat-y',
-    backgroundSize: 'cover',
   },
   backgroundGradient: {
     height: '100%',
@@ -66,6 +63,8 @@ const HomeFoldSection: React.FC<{ className?: string }> = ({ className }) => {
       sx={[
         {
           background: `url(${bgImage})`,
+          backgroundPosition: 'bottom center',
+          backgroundSize: 'cover',
           paddingTop: { xs: 23.75, sm: 60 },
           height: { xs: 550, sm: 864 },
         },
