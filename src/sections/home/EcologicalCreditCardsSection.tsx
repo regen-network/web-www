@@ -77,6 +77,7 @@ const useStyles = makeStyles<Theme>((theme: Theme) => ({
     '& .slick-track': {
       '& .slick-slide': {
         margin: '0 0',
+        paddingRight: 0,
       },
     },
   },
@@ -94,7 +95,9 @@ const EcologicalCreditCardsSection: React.FC = () => {
     <Section
       title={content?.title ?? ''}
       sx={{
-        section: { py: { xs: 0, lg: 0 } },
+        section: {
+          py: { xs: 0, lg: 0 },
+        },
         title: { mb: 10 },
         children: { mt: { xs: 0, sm: 0 } },
       }}
