@@ -25,7 +25,7 @@ const query = graphql`
 const PartnersSection: React.FC = () => {
   const { sanityHomePageWeb } = useStaticQuery<HomePartnersSectionQuery>(query);
   const content = sanityHomePageWeb?.homeWebPartnersSection;
-  const partners = content?.partners?.sort(() => Math.random() - 0.5) ?? [];
+  const partners = content?.partners ?? [];
 
   return (
     <CarouselSection
@@ -34,14 +34,13 @@ const PartnersSection: React.FC = () => {
       sx={{ px: { xs: 0, lg: 0 }, pt: { xs: 0, lg: 0 } }}
     >
       {partners?.map((partner, index) => {
-        const isLast = index == partners.length - 1;
         return (
           <Box
             key={partner?.name}
             sx={{
               display: 'flex !important',
               alignItems: 'center',
-              mr: isLast ? 0 : 10,
+              mr: 13.75,
               minHeight: 94,
             }}
           >
