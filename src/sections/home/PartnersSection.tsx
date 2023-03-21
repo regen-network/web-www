@@ -25,20 +25,33 @@ const query = graphql`
 const PartnersSection: React.FC = () => {
   const { sanityHomePageWeb } = useStaticQuery<HomePartnersSectionQuery>(query);
   const content = sanityHomePageWeb?.homeWebPartnersSection;
+  const partners = content?.partners?.sort(() => Math.random() - 0.5) ?? [];
 
   return (
     <CarouselSection
+      settings={{ variableWidth: true }}
       title={content?.title ?? ''}
       sx={{ px: { xs: 0, lg: 0 }, pt: { xs: 0, lg: 0 } }}
     >
-      {content?.partners?.map(partner => (
-        <Box key={partner?.name}>
-          <img
-            src={partner?.logo?.asset?.url ?? ''}
-            alt={partner?.name ?? ''}
-          />
-        </Box>
-      ))}
+      {partners?.map((partner, index) => {
+        const isLast = index == partners.length - 1;
+        return (
+          <Box
+            key={partner?.name}
+            sx={{
+              display: 'flex !important',
+              alignItems: 'center',
+              mr: isLast ? 0 : 10,
+              minHeight: 94,
+            }}
+          >
+            <img
+              src={partner?.logo?.asset?.url ?? ''}
+              alt={partner?.name ?? ''}
+            />
+          </Box>
+        );
+      })}
     </CarouselSection>
   );
 };
