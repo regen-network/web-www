@@ -1,3 +1,6 @@
+# DEPRECATED
+Website source has been moved to https://github.com/regen-network/regen-web/tree/dev/web-www
+
 # Regen Website
 
 The website for the [Regen Network](https://regen.network).
